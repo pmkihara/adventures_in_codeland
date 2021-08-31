@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_205035) do
+ActiveRecord::Schema.define(version: 2021_08_31_150514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "npcs", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "img", null: false
+    t.string "line", null: false
+    t.string "question", null: false
+    t.string "resolution", null: false
+    t.boolean "teacher", default: false, null: false
+    t.string "tip1", null: false
+    t.string "tip2", null: false
+    t.string "tip3", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plays", force: :cascade do |t|
+    t.integer "score", default: 0, null: false
+    t.integer "start_time", default: 0, null: false
+    t.integer "end_time"
+    t.integer "user_position_x", null: false
+    t.integer "user_position_y", null: false
+    t.bigint "user_id", null: false
+    t.integer "lives", default: 3, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_plays_on_user_id"
+  end
+
+  create_table "special_cells", force: :cascade do |t|
+    t.string "cell_status", null: false
+    t.integer "position_x", null: false
+    t.integer "position_y", null: false
+    t.bigint "play_id", null: false
+    t.bigint "npc_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["npc_id"], name: "index_special_cells_on_npc_id"
+    t.index ["play_id"], name: "index_special_cells_on_play_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +62,13 @@ ActiveRecord::Schema.define(version: 2021_08_30_205035) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+    t.integer "age", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "plays", "users"
+  add_foreign_key "special_cells", "npcs"
+  add_foreign_key "special_cells", "plays"
 end
