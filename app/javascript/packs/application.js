@@ -28,9 +28,14 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { canva } from '../components/canva';
+import { moveCharacter, stopCharacter } from '../components/character';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   canva();
 });
+
+document.addEventListener("keydown", moveCharacter)
+document.addEventListener("keyup", stopCharacter)

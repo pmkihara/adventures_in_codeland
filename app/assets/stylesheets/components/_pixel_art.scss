@@ -17,6 +17,13 @@
     position: relative;
 }
 
+.character-sprite {
+  position: absolute;
+  background-size: 100%;
+  width: calc( var(--grid-cell)* 8 );
+  height: calc( var(--grid-cell)* 8 );
+}
+
 .character-shadow {
     width: calc(32 * var(--pixel-size));
     position: absolute;
@@ -29,8 +36,24 @@
     width: calc(128 * var(--pixel-size));
 }
 
-.character-front {
+.character-down {
   width: calc(128 * var(--pixel-size));
+  background-position-y: 0;
+}
+
+.character-left {
+  width: calc(128 * var(--pixel-size));
+   background-position-y: -60px;
+}
+
+.character-right {
+  width: calc(128 * var(--pixel-size));
+  background-position-y: -124px;
+}
+
+.character-up {
+  width: calc(128 * var(--pixel-size));
+  background-position-y: -190px;
 }
 
 /* Keyframe animation: moves the image 100% to the left */
