@@ -4,12 +4,12 @@ class CreateNpcs < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.string :img, null: false
       t.string :line, null: false
-      t.string :question, null: false
-      t.string :resolution, null: false
+      t.string :question
+      t.string :resolution
       t.boolean :teacher, null: false, default: false
-      t.string :tip1, null: false
-      t.string :tip2, null: false
-      t.string :tip3, null: false
+      t.string :tip1
+      t.string :tip2
+      t.string :tip3
 
       t.timestamps
     end

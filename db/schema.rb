@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 2021_08_31_150514) do
     t.string "name", null: false
     t.string "img", null: false
     t.string "line", null: false
-    t.string "question", null: false
-    t.string "resolution", null: false
+    t.string "question"
+    t.string "resolution"
     t.boolean "teacher", default: false, null: false
-    t.string "tip1", null: false
-    t.string "tip2", null: false
-    t.string "tip3", null: false
+    t.string "tip1"
+    t.string "tip2"
+    t.string "tip3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
