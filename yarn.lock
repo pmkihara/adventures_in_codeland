@@ -4304,6 +4304,11 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+kaboom@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/kaboom/-/kaboom-0.5.1.tgz#84ea681aebf89651b43f88279d94bc5ac5c28b66"
+  integrity sha512-OgNAQBquC2WQNQAKkOmDclAKJ0zDSqPMEYPF8/QOPlWt42umAO0JI3RSDlGJvg1HQcVIXUxrvPUvmjgTv6c2/A==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
