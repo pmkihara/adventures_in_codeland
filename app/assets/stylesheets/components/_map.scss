@@ -1,3 +1,13 @@
+.view {
+  width: calc(9 * var(--grid-cell));
+  height: calc(9 * var(--grid-cell));
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+}
+
 .map {
-  size: 100%;
+  background-size: 100%;
+  width: calc(16 * var(--grid-cell));
+  height: calc(66 * var(--grid-cell));
 }
