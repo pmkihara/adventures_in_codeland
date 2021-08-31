@@ -1,0 +1,39 @@
+/* Sets CSS variables */
+:root {
+    --pixel-size: 2; /* Increases the size of the pixel art dinamically*/
+}
+
+/* Makes pixel art pixelated instead of blurred when the image is increased */
+.pixel-art {
+    image-rendering: pixelated;
+}
+
+/* Character setting */
+.character {
+    height: calc(32px * var(--pixel-size));
+    width: calc(32px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+}
+
+.character-shadow {
+    width: calc(32px * var(--pixel-size));
+    position: absolute;
+    opacity: 25%;
+}
+
+/* Walking character */
+.character-walking {
+    animation: move-sprite 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+}
+
+/* Keyframe animation: moves the image 100% to the left */
+@keyframes move-sprite {
+    from {
+        transform: translate3d(0px,0,0);
+    }
+    to {
+        transform: translate3d(-100%,0,0);
+    }
+}
