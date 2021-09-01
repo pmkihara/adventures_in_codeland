@@ -33,19 +33,19 @@ const initP5 = () => {
     s.draw = () => {
       const map = s.select('#map');
       if (s.keyIsDown(s.LEFT_ARROW)) {
-        x += 5;
+        x += 2;
       }
 
       if (s.keyIsDown(s.RIGHT_ARROW)) {
-        x -= 5;
+        x -= 2;
       }
 
       if (s.keyIsDown(s.UP_ARROW)) {
-        y += 5;
+        y += 2;
       }
 
       if (s.keyIsDown(s.DOWN_ARROW)) {
-        y -= 5;
+        y -= 2;
       }
       s.clear();
       map.position(x,y);
