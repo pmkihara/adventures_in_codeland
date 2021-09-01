@@ -34,7 +34,7 @@ import { moveCharacter, stopCharacter } from '../components/character';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  canva();
+  //canva();
 });
 
 document.addEventListener("keydown", moveCharacter)
