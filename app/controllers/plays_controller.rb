@@ -7,6 +7,7 @@ class PlaysController < ApplicationController
     @play.user = current_user
     @play.save
     generate_cells(@play)
+    redirect_to show_path(@play)
     # gerar tudo aqui specials_cells npcs
   end
 

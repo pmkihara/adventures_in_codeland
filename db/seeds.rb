@@ -3,13 +3,13 @@ puts "...."
 
 User.destroy_all if Rails.env.development?
 
-paty = User.new(
+user = User.new(
   name: 'Pilantra',
   age: 12,
   email: 'p@p.com',
   password: "123456",
   password_confirmation: "123456"
 )
-paty.save
+user.save
 
 puts "Finished Seed!!! =)"
