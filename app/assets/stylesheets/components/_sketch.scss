@@ -1,6 +1,4 @@
-.view {
-  width: calc(9 * var(--grid-cell));
-  height: calc(9 * var(--grid-cell));
+#sketch {
   overflow: hidden;
   position: relative;
   background-color: black;

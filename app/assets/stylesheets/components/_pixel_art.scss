@@ -1,12 +1,12 @@
 /* Sets CSS variables */
 :root {
-    --pixel-size: 2px; /* Increases the size of the pixel art dinamically*/
-    --grid-cell: calc( var(--pixel-size) * 32 );
+  --pixel-size: 2px; /* Increases the size of the pixel art dinamically*/
+  --grid-cell: calc( var(--pixel-size) * 32 );
 }
 
 /* Makes pixel art pixelated instead of blurred when the image is increased */
 .pixel-art {
-    image-rendering: pixelated;
+  image-rendering: pixelated;
 }
 
 /* Character setting */
@@ -20,8 +20,8 @@
 .character-sprite {
   position: absolute;
   background-size: 100%;
-  width: calc( var(--grid-cell)* 8 );
-  height: calc( var(--grid-cell)* 8 );
+  width: calc(128 * var(--pixel-size));
+  height: calc(128 * var(--pixel-size));
 }
 
 .character-shadow {
