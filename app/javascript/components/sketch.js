@@ -1,17 +1,21 @@
 import p5 from 'p5';
 
 const initP5 = () => {
+  let x = 0;
+  let y = 0;
+
   const sketch = (s) => {
     s.setup = () => {
       // The background image must be the same size as the parameters
       // into the createCanvas() method. In this program, the size of
       // the image is 720x400 pixels.
-      const canvas = s.createCanvas(500, 500);
+      const canvas = s.createCanvas(800, 600);
 
       const map = s.createDiv();
       map.addClass('map pixel-art');
-      map.style("background-image: url(/assets/map-05df230a8d7156c2802186ddd4486efe0accc75a3a3627c5966b72bcc5f8615c.png)");
+      map.style("background-image: url(/map.png)");
       map.parent("sketch")
+      map.id('map')
 
       const character = s.createDiv();
       character.addClass('character')
@@ -21,13 +25,34 @@ const initP5 = () => {
 
       const characterSprite = s.createDiv();
       characterSprite.addClass('pixel-art character-sprite character-down');
-      characterSprite.style("background-image: url(/assets/cat-sprite-3e3fbf4062b56d456f56c73f3b7d58bcef2b90f8c2d5a6bea565fa64173e1592.png)");
+      characterSprite.style("background-image: url(/cat-sprite.png)");
       characterSprite.parent("character")
 
     }
 
     s.draw = () => {
+      const map = s.select('#map');
+      if (s.keyIsDown(s.LEFT_ARROW)) {
+        x += 5;
+      }
+
+      if (s.keyIsDown(s.RIGHT_ARROW)) {
+        x -= 5;
+      }
+
+      if (s.keyIsDown(s.UP_ARROW)) {
+        y += 5;
+      }
+
+      if (s.keyIsDown(s.DOWN_ARROW)) {
+        y -= 5;
+      }
+      s.clear();
+      map.position(x,y);
     }
+
+
+
   }
 
   new p5(sketch);
