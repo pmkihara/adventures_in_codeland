@@ -47,7 +47,7 @@ class PlaysController < ApplicationController
   end
 
   def generate_npc_rafa
-    rafa = Npc.new(name: "Rafa", img: "img", line: "test", question: "boa tarde?", resolution: "boa!", teacher: true)
+    rafa = Npc.new(name: "Rafa", img: "img", question: "boa tarde?", resolution: "boa!", teacher: true)
     rafa.save
     rafa
   end

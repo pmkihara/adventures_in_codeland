@@ -30,6 +30,7 @@ import "bootstrap";
 // import { moveCharacter, stopCharacter } from '../components/character';
 
 import { initP5 } from "../components/sketch";
+import { gameJs } from "../packs/game";
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,5 +40,6 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('sketch')) { initP5(); }
   // document.addEventListener("keydown", moveCharacter)
   // document.addEventListener("keyup", stopCharacter)
+  if (document.getElementById('game-container')) { gameJs(); }
 
 });
