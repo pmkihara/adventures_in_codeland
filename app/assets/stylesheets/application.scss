@@ -13,5 +13,3 @@
 @import "pages/index";
 
 /* Sets CSS variables for pixel art */
-$pixel-size: 2px; /* Increases the size of the pixel art dinamically*/
-$grid-cell: calc( var(--pixel-size) * 16 ); /*  Sets the size of the grid  */
