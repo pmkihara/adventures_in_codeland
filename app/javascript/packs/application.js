@@ -35,7 +35,9 @@ import { initP5 } from "../components/sketch";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
   if (document.getElementById('sketch')) { initP5(); }
   // document.addEventListener("keydown", moveCharacter)
   // document.addEventListener("keyup", stopCharacter)
+
 });
