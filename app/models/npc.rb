@@ -1,4 +1,4 @@
-require 'roberto_barros'
+# require 'roberto_barros'
 
 class Npc < ApplicationRecord
   has_one :special_cell
@@ -7,7 +7,7 @@ class Npc < ApplicationRecord
 
   def speak
     unless cell_active
-      RobertoBarros.in_ingrish
+      # RobertoBarros.in_ingrish
     end
   end
 end
