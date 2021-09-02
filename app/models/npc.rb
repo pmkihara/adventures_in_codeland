@@ -10,4 +10,8 @@ class Npc < ApplicationRecord
       # RobertoBarros.in_ingrish
     end
   end
+
+  def correct_answer?(answer)
+    resolution == answer
+  end
 end

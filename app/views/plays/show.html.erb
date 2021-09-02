@@ -1,2 +1,7 @@
-<h1>Insert the answer for that question: <%= @play.cell_active.npc.question %></h1>
-<%= render "play" %>
+<div class="container" data-controller="change-speech-box">
+  <h1 data-change-speech-box-target="speech">Insert the answer for that question: <%= @play.cell_active.npc.question %></h1>
+  <%= render "play", play: @play %>
+  <div class="dialogue hidden">
+    <%= render "form" %>
+  </div>
+</div>
