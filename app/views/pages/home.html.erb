@@ -1,36 +1,56 @@
-<div class="container">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('background-game.png') %>);">
     <div class="banner-text">
-      <h1>Start Game</h1>
-      <%= link_to new_path do %>
-        <i class="fas fa-play-circle"></i>
-      <% end %>
+      <h1>Adventures in Codeland</h1>
+      <div class="home-buttons">
+        <ul class=list-inline>
+          <li>
+            <%= link_to new_path do %>
+              <i class="fas fa-play-circle"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_path do %>
+              <i class="fas fa-trophy"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_path do %>
+              <i class="fas fa-cat"></i>
+            <% end %>
+          </li>
+        </ul>
+
+
+      </div>
     </div>
+
   </div>
-  <div class="container">
-    <div class="board text-center">
-      <div>
-        <h1>High score Table</h1>
+
+  <!-- <div class="container">
+    <div class="container">
+      <div class="board text-center">
+        <div>
+          <h1>High score Table</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container story">
+      <div class="text-center story-content">
+        <h1>The story</h1>
+      </div>
+      <div class="text-center story-content">
+        <h1>The Objective</h1>
       </div>
     </div>
   </div>
-  <div class="container story">
-    <div class="text-center story-content">
-      <h1>The story</h1>
+  <footer class="flex-col mt-5 d-flex align-items-center justify-content-center">
+    <div class="content-container">
+      <p> Copyright &copy; 2021 Adventures in Codeland, Inc. All rights reserved</p>
+      <div class="social-media-container">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/pmkihara/adventures_in_codeland"><i class="fab fa-github"></i></a>
+      </div>
     </div>
-    <div class="text-center story-content">
-      <h1>The Objective</h1>
-    </div>
-  </div>
-</div>
-<footer class="flex-col mt-5 d-flex align-items-center justify-content-center">
-  <div class="content-container">
-    <p> Copyright &copy; 2021 Adventures in Codeland, Inc. All rights reserved</p>
-    <div class="social-media-container">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="https://github.com/pmkihara/adventures_in_codeland"><i class="fab fa-github"></i></a>
-    </div>
-  </div>
-</footer>
+  </footer> -->
