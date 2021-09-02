@@ -1,4 +1,7 @@
-<%= form_tag validate_answer_path method: :post do %>
+<%= form_tag validate_answer_path, method: :post,
+  data: {
+    action: 'submit->change-speech-box#validateAnswer', 'change-speech-box-target': 'form'
+  } do %>
   <%= text_field_tag :answer, params[:answer] %>
   <%= submit_tag "Submit Answer" %>
 <% end %>
