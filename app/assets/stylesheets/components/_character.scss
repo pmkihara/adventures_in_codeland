@@ -1,9 +1,4 @@
-/* Makes pixel art pixelated instead of blurred when the image is increased */
-.pixel-art {
-  image-rendering: pixelated;
-}
-
-/* Character setting */
+/* --------------------------- Character settings --------------------------- */
 .character > div {
   height: 32px;
   width: 32px;
@@ -24,10 +19,7 @@
   opacity: 50%;
 }
 
-/* Walking character */
-.character-walking {
-  animation: move-sprite 1s steps(4) infinite;
-}
+/* --------------------------- Character position --------------------------- */
 
 .character-down {
   background-position-y: 0 !important;
@@ -45,6 +37,12 @@
   background-position-y: -96px !important;
 }
 
+
+/* ---------------------------- Walking animation --------------------------- */
+
+.character-walking {
+  animation: move-sprite 1s steps(4) infinite;
+}
 /* Keyframe animation: moves the image 100% to the left */
 @keyframes move-sprite {
   from {
@@ -55,11 +53,12 @@
   }
 }
 
-  /* npc setting */
-  .npc-sprite {
-    background-image: url("/sprites/npc_rafa.png");
-    image-rendering: pixelated;
-    background-size: 100%;
-    width: 10px;
-    height: 10px;
-  }
+/* ------------------------------ NPC settings ------------------------------ */
+
+.npc-sprite {
+  background-image: url("/sprites/npc_rafa.png");
+  image-rendering: pixelated;
+  background-size: 100%;
+  width: 10px;
+  height: 10px;
+}

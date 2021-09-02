@@ -1,5 +1,5 @@
 .map {
-  background-size: cover;
+  background-size: calc(448 * 2)px;
   width: 448px;
   height: 384px;
   table {
@@ -12,8 +12,8 @@
 
 .map-table {
   td {
-  width: 32px;
-  height: 32px;
+    width: 32px;
+    height: 32px;
   }
 }
 

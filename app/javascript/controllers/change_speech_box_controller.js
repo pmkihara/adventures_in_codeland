@@ -16,6 +16,7 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       this.speechTarget.innerText = data.message
+      this.formTarget.reset()
     });
   }
 }

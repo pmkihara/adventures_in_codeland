@@ -34,6 +34,4 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 document.addEventListener('keydown', moveCharacter);
-document.querySelector('.dialogue-form').addEventListener('submit', handleSubmit);
-
 import "controllers"
