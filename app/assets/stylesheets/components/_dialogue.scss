@@ -1,0 +1,21 @@
+.dialogue-player {
+  background-color: black;
+  width: 448px;
+  color: white;
+  form {
+    position: relative;
+  }
+  form textarea {
+    background-color: black;
+    color: white;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.answer-submit {
+  position: absolute;
+  border: 0;
+}

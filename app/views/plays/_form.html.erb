@@ -1,4 +1,4 @@
-<%= form_tag validate_answer_path method: :post do %>
-  <%= text_field_tag :answer, params[:answer] %>
-  <%= submit_tag "Submit Answer" %>
+<%= form_tag validate_answer_path, method: :post, class: "dialogue-form" do %>
+  <%= text_area_tag :answer, params[:answer], cols: 45, rows: 5, class: "answer-area" %>
+  <%= submit_tag ">", class: "answer-submit" %>
 <% end %>
