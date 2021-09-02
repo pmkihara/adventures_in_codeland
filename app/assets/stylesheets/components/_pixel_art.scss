@@ -1,67 +1,107 @@
-/* Sets CSS variables */
-:root {
-  --pixel-size: 2px; /* Increases the size of the pixel art dinamically*/
-  --grid-cell: calc( var(--pixel-size) * 32 );
+/* ------------------------------------ Map styles ----------------------------------- */
+
+.map {
+    background-size: cover;
+    width: 448px;
+    height: 384px;
 }
 
-/* Makes pixel art pixelated instead of blurred when the image is increased */
-.pixel-art {
-  image-rendering: pixelated;
+table {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
-/* Character setting */
-.character {
-    height: calc(32 * var(--pixel-size));
-    width: calc(32 * var(--pixel-size));
+.map-table td {
+    width: 32px;
+    height: 32px;
+}
+
+.active {
+    background-color: tomato;
+}
+
+/* ------------------------------------ Dialog styles ----------------------------------- */
+
+.dialogue {
+    background-color: black;
+    width: 448px;
+    color: white;
+}
+
+.dialogue form input {
+    background-color: black;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ------------------------------------ Pixel Art styles ----------------------------------- */
+
+
+  /* Makes pixel art pixelated instead of blurred when the image is increased */
+  .pixel-art {
+    image-rendering: pixelated;
+  }
+
+  /* Character setting */
+    .character {
+    height: 32px;
+    width: 32px;
     overflow: hidden;
     position: relative;
 }
 
-.character-sprite {
-  position: absolute;
-  background-size: 100%;
-  width: calc(128 * var(--pixel-size));
-  height: calc(128 * var(--pixel-size));
-}
+  .character > div {
+      height: 32px;
+      width: 32px;
+      overflow: hidden;
+      position: relative;
+  }
 
-.character-shadow {
-    width: calc(32 * var(--pixel-size));
+  .character-sprite {
     position: absolute;
-    opacity: 50%;
-}
+    background-size: 100%;
+    width: 128px;
+    height: 128px;
+  }
 
-/* Walking character */
-.character-walking {
+  .character-shadow {
+      width: 32px;
+      position: absolute;
+      opacity: 50%;
+  }
+
+  /* Walking character */
+  .character-walking {
     animation: move-sprite 1s steps(4) infinite;
-    width: calc(128 * var(--pixel-size));
-}
+  }
 
-.character-down {
-  width: calc(128 * var(--pixel-size));
-  background-position-y: 0;
-}
+  .character-down {
+    background-position-y: 0 !important;
+  }
 
-.character-left {
-  width: calc(128 * var(--pixel-size));
-   background-position-y: -60px;
-}
+  .character-left {
+     background-position-y: -32px !important;
+  }
 
-.character-right {
-  width: calc(128 * var(--pixel-size));
-  background-position-y: -124px;
-}
+  .character-right {
+    background-position-y: -64px !important;
+  }
 
-.character-up {
-  width: calc(128 * var(--pixel-size));
-  background-position-y: -190px;
-}
+  .character-up {
+    background-position-y: -96px !important;
+  }
 
-/* Keyframe animation: moves the image 100% to the left */
-@keyframes move-sprite {
-    from {
-        transform: translate3d(0px,0,0);
-    }
-    to {
-        transform: translate3d(-100%,0,0);
-    }
-}
+  /* Keyframe animation: moves the image 100% to the left */
+  @keyframes move-sprite {
+      from {
+          transform: translate3d(0px,0,0);
+      }
+      to {
+          transform: translate3d(-100%,0,0);
+      }
+  }
