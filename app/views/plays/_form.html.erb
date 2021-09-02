@@ -1,4 +1,7 @@
-<%= form_tag validate_answer_path, method: :post, class: "dialogue-form" do %>
+<%= form_tag validate_answer_path, method: :post, class: "dialogue-form",
+  data: {
+    action: 'submit->change-speech-box#validateAnswer', 'change-speech-box-target': 'form'
+  } do %>
   <%= text_area_tag :answer, params[:answer], cols: 45, rows: 5, class: "answer-area" %>
   <%= submit_tag ">", class: "answer-submit" %>
 <% end %>

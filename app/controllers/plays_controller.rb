@@ -29,10 +29,12 @@ class PlaysController < ApplicationController
   end
 
   def validate_answer
-    if @play.cell_active.npc.resolution == params[:answer]
-      @play.score += 3
-      @play.cell_active.cell_status = "inactive_quest"
-      # TODO
+    if @play.cell_active.npc.correct_answer?(params[:answer])
+      # @play.score += 3
+      # @play.cell_active.cell_status = "inactive_quest"
+      render json: { message: "Yay! Correct answer!" }
+    else
+      render json: { message: "Oh no! Wrong answer!" }
     end
   end
 

@@ -1,63 +1,65 @@
-  /* Makes pixel art pixelated instead of blurred when the image is increased */
-  .pixel-art {
-    image-rendering: pixelated;
-  }
-
-  /* Character setting */
-    .character {
-    height: 32px;
-    width: 32px;
-    overflow: hidden;
-    position: relative;
+/* Makes pixel art pixelated instead of blurred when the image is increased */
+.pixel-art {
+  image-rendering: pixelated;
 }
 
-  .character > div {
-      height: 32px;
-      width: 32px;
-      overflow: hidden;
-      position: relative;
-  }
+/* Character setting */
+.character > div {
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  position: relative;
+}
 
-  .character-sprite {
-    position: absolute;
+.character-sprite {
+  position: absolute;
+  background-size: 100%;
+  width: 128px;
+  height: 128px;
+}
+
+.character-shadow {
+  width: 32px;
+  position: absolute;
+  opacity: 50%;
+}
+
+/* Walking character */
+.character-walking {
+  animation: move-sprite 1s steps(4) infinite;
+}
+
+.character-down {
+  background-position-y: 0 !important;
+}
+
+.character-left {
+  background-position-y: -32px !important;
+}
+
+.character-right {
+  background-position-y: -64px !important;
+}
+
+.character-up {
+  background-position-y: -96px !important;
+}
+
+/* Keyframe animation: moves the image 100% to the left */
+@keyframes move-sprite {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+  /* npc setting */
+  .npc-sprite {
+    background-image: url("/sprites/npc_rafa.png");
+    image-rendering: pixelated;
     background-size: 100%;
-    width: 128px;
-    height: 128px;
-  }
-
-  .character-shadow {
-      width: 32px;
-      position: absolute;
-      opacity: 50%;
-  }
-
-  /* Walking character */
-  .character-walking {
-    animation: move-sprite 1s steps(4) infinite;
-  }
-
-  .character-down {
-    background-position-y: 0 !important;
-  }
-
-  .character-left {
-     background-position-y: -32px !important;
-  }
-
-  .character-right {
-    background-position-y: -64px !important;
-  }
-
-  .character-up {
-    background-position-y: -96px !important;
-  }
-
-  /* Keyframe animation: moves the image 100% to the left */
-  @keyframes move-sprite {
-      from {
-          transform: translate3d(0px,0,0);
-      }
-      to {
-          transform: translate3d(-100%,0,0);
-      }
+    width: 10px;
+    height: 10px;
   }
