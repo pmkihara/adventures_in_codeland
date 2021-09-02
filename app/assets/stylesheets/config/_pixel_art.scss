@@ -1,0 +1,9 @@
+:root {
+  --pixel-size: 2px; /* Increases the size of the pixel art dinamically*/
+  --grid-cell: calc( var(--pixel-size) * 32 );
+}
+
+/* Makes pixel art pixelated instead of blurred when the image is increased */
+.pixel-art {
+  image-rendering: pixelated;
+}

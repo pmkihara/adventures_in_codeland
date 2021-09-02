@@ -6,13 +6,11 @@ const moveCharacter = (e) => {
   const charColumn = characterCell.cellIndex;
   const charRow = characterCell.parentElement.rowIndex;
 
-  // -------------------------------------- Character position  --------------------------------------
-
+  // -------------------------------------- Active cell position  --------------------------------------
 
   const activeCell = document.querySelector('.active');
   const table = document.querySelector('.map-table');
-
-  const dialogue = document.querySelector('.dialogue');
+  const dialogue = document.querySelector('.dialogue-player');
 
   // -------------------------------------- Active cell functions --------------------------------------
 

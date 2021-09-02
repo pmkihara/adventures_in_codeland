@@ -1,0 +1,22 @@
+.dialogue-player {
+  background-color: black;
+  width: 448px;
+  color: white;
+  form {
+    position: relative;
+  }
+  form textarea {
+    background-color: black;
+    color: white;
+    font-family: $user-input-font;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.answer-submit {
+  position: absolute;
+  border: 0;
+}
