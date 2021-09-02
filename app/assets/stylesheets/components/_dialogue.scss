@@ -1,7 +1,16 @@
+// ----------------------------- Hides the element -----------------------------
+
+.hidden {
+  display: none;
+}
+
+// ------------------------------- Player input --------------------------------
+
 .dialogue-player {
   background-color: black;
   width: 448px;
   color: white;
+  padding: 10px;
   form {
     position: relative;
   }
@@ -9,14 +18,29 @@
     background-color: black;
     color: white;
     font-family: $user-input-font;
+    border: none;
   }
-}
-
-.hidden {
-  display: none;
+  form textarea:focus-visible {
+    border: none;
+    outline: none;
+  }
 }
 
 .answer-submit {
   position: absolute;
   border: 0;
+}
+
+// --------------------------------- NPC box -----------------------------------
+
+.dialogue-npc {
+  width: 340px;
+  background-color: rgba(0,0,0,0.7);
+  border: 2px solid white;
+  border-radius: 4px;
+  position: absolute;
+  color: white;
+  font-family: $pixel-text-font;
+  padding: 10px;
+  margin: 10px;
 }
