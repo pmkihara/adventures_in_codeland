@@ -26,20 +26,13 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-// import { moveCharacter, stopCharacter } from '../components/character';
-
-import { initP5 } from "../components/sketch";
-import { gameJs } from "../packs/game";
-
+import { moveCharacter } from '../components/moveCharacter';
+import { handleSubmit } from '../components/handleSubmit';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
-  if (document.getElementById('sketch')) { initP5(); }
-  // document.addEventListener("keydown", moveCharacter)
-  // document.addEventListener("keyup", stopCharacter)
-  if (document.getElementById('game-container')) { gameJs(); }
-
 });
+
+document.addEventListener('keydown', moveCharacter);
+document.querySelector('.dialogue-form').addEventListener('submit', handleSubmit);
