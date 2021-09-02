@@ -35,3 +35,5 @@ document.addEventListener('turbolinks:load', () => {
 });
 document.addEventListener('keydown', moveCharacter);
 document.querySelector('.dialogue-form').addEventListener('submit', handleSubmit);
+
+import "controllers"
