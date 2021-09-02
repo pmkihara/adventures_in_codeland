@@ -102,11 +102,11 @@ table {
   }
 
   /* npc setting */
-  .npc-sprite {
+  npc-sprite {
     background-image: url("/sprites/npc_rafa.png");
     image-rendering: pixelated;
     background-size: 100%;
     width: 10px;
     height: 10px;
   }
-
+}
