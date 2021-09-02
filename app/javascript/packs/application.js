@@ -27,7 +27,6 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { moveCharacter } from '../components/moveCharacter';
-import { handleSubmit } from '../components/handleSubmit';
 import { enter } from '../components/enter';
 
 
