@@ -6,12 +6,16 @@ const enter = () => {
     }
   }
 
-  document.getElementById("answer").addEventListener("keypress", submitOnEnter);
+  if (document.getElementById("answer")) {
+    document.getElementById("answer").addEventListener("keypress", submitOnEnter);
+  }
 
-  document.querySelector("dialogue-form").addEventListener("submit", (event) => {
+  if (document.querySelector(".dialogue-form")) {
+    document.querySelector(".dialogue-form").addEventListener("submit", (event) => {
       event.preventDefault();
       console.log("form submitted");
-  });
+    });
+  }
 }
 
 export { enter }
