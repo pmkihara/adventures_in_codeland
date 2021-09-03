@@ -1,11 +1,10 @@
 .banner {
-  background-image: url('background-game.png');
-  background-size: cover;
+  background-size: contain;
   height: 100vh;
 }
 
 .banner h1 {
   font-size: 120px;
   font-family: 'Modak', cursive;
-  color: orange;
+  color: rgb(253, 23, 23);
 }

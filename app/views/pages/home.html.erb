@@ -1,4 +1,4 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('background-game.png') %>);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(<%= image_path('background-game.png') %>);">
     <div class="banner-text">
       <h1>Adventures in Codeland</h1>
       <div class="home-buttons">
@@ -9,12 +9,12 @@
             <% end %>
           </li>
           <li>
-            <%= link_to new_path do %>
+            <%= link_to score_path do %>
               <i class="fas fa-trophy"></i>
             <% end %>
           </li>
           <li>
-            <%= link_to new_path do %>
+            <%= link_to story_path do %>
               <i class="fas fa-cat"></i>
             <% end %>
           </li>
@@ -23,7 +23,6 @@
 
       </div>
     </div>
-
   </div>
 
   <!-- <div class="container">
