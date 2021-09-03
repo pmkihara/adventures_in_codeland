@@ -1,0 +1,27 @@
+.list-inline {
+  list-style: none;
+  padding: 0;
+}
+
+.list-inline li {
+  display: inline;
+}
+
+.list-inline li i {
+  font-size: 50px;
+  margin: 20px 30px 0 30px;
+  padding: 12px;
+  background-color: rgb(170, 221, 51);
+  border-radius: 50%;
+  box-shadow: 0 0 15px #f8f9fa;
+}
+
+.list-inline li i:hover {
+  transform: translateY(-10px);
+  background: rgb(236, 232, 27);
+}
+
+.list-inline li i span {
+  overflow: hidden;
+  padding: 20px;
+}

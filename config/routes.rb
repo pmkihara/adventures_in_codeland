@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  #rotas pages
+  get '/story', to: 'pages#story'
+  get '/score', to: 'pages#score'
+
   # rotas play
   get '/play', to: 'plays#new', as: 'new'
   get '/play/:id', to: 'plays#show', as: 'show'
