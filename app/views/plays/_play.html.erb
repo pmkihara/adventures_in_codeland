@@ -1,5 +1,5 @@
-<div class="map pixel-art" style="background: url(<%= image_path 'map.png' %>);">
-  <table class="map-table">
+<div class="map" style="background: url(<%= image_path 'map.png' %>);">
+  <table class="map-table" data-controller="build-map" data-build-map-info-value="<%= @hash_infos.to_json %>">
     <tr id="tr-0">
       <td class="blocked"></td>
       <td class="blocked"></td>
@@ -122,7 +122,7 @@
       <td></td>
       <td></td>
       <td></td>
-      <td class="active npc-sprite blocked"></td>
+      <td></td>
       <td></td>
       <td></td>
       <td class="blocked"></td>

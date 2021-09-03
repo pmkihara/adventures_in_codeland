@@ -8,7 +8,7 @@ const moveCharacter = (e) => {
 
   // -------------------------------------- Active cell settings  --------------------------------------
 
-  const activeCell = document.querySelector('.active');
+  const activeCell = document.querySelector('.active_quest');
   const table = document.querySelector('.map-table');
   const dialogue = document.querySelector('.dialogue-player');
   const npcBox = document.querySelector('.dialogue-npc');
@@ -31,6 +31,27 @@ const moveCharacter = (e) => {
     }
   }
 
+  // -------------------------------------- Inactive cell settings  --------------------------------------
+
+  const inactiveCell = document.querySelector('.inactive_quest');
+
+  // -------------------------------------- Inactive cell functions --------------------------------------
+
+  const nearInactiveCell = (cell) => {
+    const sameRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex;
+    const adjRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex + 1 || inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex - 1;
+    const sameColumn = inactiveCell.cellIndex === cell.cellIndex;
+    const adjColumn = inactiveCell.cellIndex === cell.cellIndex + 1 || inactiveCell.cellIndex === cell.cellIndex - 1;
+
+    if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
+      console.log("entrou?");
+      npcBox.classList.remove('hidden');
+    }
+    else {
+      npcBox.classList.add('hidden');
+    }
+  }
+
   // -------------------------------------- Movement functions -----------------------------------------
 
   const moveDown = (column, row) => {
@@ -39,6 +60,7 @@ const moveCharacter = (e) => {
       destinationCell.appendChild(characterDiv);
       destinationCell.classList.add('character');
       characterCell.classList.remove('character');
+      nearInactiveCell(destinationCell);
       nearActiveCell(destinationCell);
     }
   }
@@ -48,6 +70,7 @@ const moveCharacter = (e) => {
       destinationCell.appendChild(characterDiv);
       destinationCell.classList.add('character');
       characterCell.classList.remove('character');
+      nearInactiveCell(destinationCell);
       nearActiveCell(destinationCell);
     }
   }
@@ -57,6 +80,7 @@ const moveCharacter = (e) => {
       destinationCell.appendChild(characterDiv);
       destinationCell.classList.add('character');
       characterCell.classList.remove('character');
+      nearInactiveCell(destinationCell);
       nearActiveCell(destinationCell);
     }
   }
@@ -66,6 +90,7 @@ const moveCharacter = (e) => {
       destinationCell.appendChild(characterDiv);
       destinationCell.classList.add('character');
       characterCell.classList.remove('character');
+      nearInactiveCell(destinationCell);
       nearActiveCell(destinationCell);
     }
   }
