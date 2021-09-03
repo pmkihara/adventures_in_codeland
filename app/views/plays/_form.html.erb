@@ -2,6 +2,5 @@
   data: {
     action: 'submit->change-speech-box#validateAnswer submit->reset-form#reset', 'change-speech-box-target': 'form', controller: ''
   } do %>
-  <%= text_area_tag :answer, params[:answer], cols: 45, rows: 5, class: "answer-area" %>
-  <%= submit_tag ">", class: "answer-submit" %>
+  <%= text_area_tag :answer, params[:answer], cols: 60, rows: 3, class: "answer-area", placeholder: "Type your answer here and press Enter!" %>
 <% end %>

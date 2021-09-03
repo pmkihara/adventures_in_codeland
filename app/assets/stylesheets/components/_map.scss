@@ -1,6 +1,7 @@
 .map {
-  width: 448px;
-  height: 384px;
+  width: 896px;
+  height: 768px;
+  background-size: 896px 768px;
   table {
     margin: 0;
     padding: 0;
@@ -11,11 +12,8 @@
 
 .map-table {
   td {
-    width: 32px;
-    height: 32px;
+    min-width: 64px;
+    max-width: 64px;
+    height: 64px;
   }
-}
-
-.active {
-    background-color: tomato;
 }
