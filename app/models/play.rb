@@ -10,4 +10,9 @@ class Play < ApplicationRecord
       return special_cell if special_cell.cell_status == "active_quest"
     end
   end
+
+  def next_active_cell
+    each_special_cells = special_cells.each
+    return each_special_cells.next if each_special_cells.next.cell_status == "active_quest"
+  end
 end
