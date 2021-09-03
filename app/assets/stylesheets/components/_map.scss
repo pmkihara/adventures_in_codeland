@@ -2,6 +2,7 @@
   width: 896px;
   height: 768px;
   background-size: 896px 768px !important;
+  background-color: rgba(0,0,0,0);
   table {
     margin: 0;
     padding: 0;
@@ -16,4 +17,11 @@
     max-width: 64px;
     height: 64px;
   }
+}
+
+.map-overlay {
+  width: 896px;
+  height: 768px;
+  background-size: 896px 768px !important;
+  position: absolute;
 }
