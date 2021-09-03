@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/davisjr2000/roberto-barros.git
+  revision: fe6faa4a719a833bb69e436459e8eb3c99fde303
+  specs:
+    roberto_barros (1.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -251,6 +257,7 @@ DEPENDENCIES
   rails (~> 6.0.4, >= 6.0.4.1)
   rails-dom-testing
   redis (~> 4.0)
+  roberto_barros!
   sass-rails (>= 6)
   selenium-webdriver
   simple_form

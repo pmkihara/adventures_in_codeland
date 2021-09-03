@@ -1,4 +1,4 @@
-# require 'roberto_barros'
+require 'roberto_barros'
 
 class Npc < ApplicationRecord
   has_one :special_cell
@@ -6,9 +6,7 @@ class Npc < ApplicationRecord
   validates :name, :img, :teacher, presence: true
 
   def speak
-    unless cell_active
-      # RobertoBarros.in_ingrish
-    end
+    RobertoBarros.quote
   end
 
   def correct_answer?(answer)

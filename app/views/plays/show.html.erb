@@ -1,9 +1,9 @@
-<div class="play-container" data-controller="change-speech-box">
+<div class="play-container" data-controller="play" data-play-info-value="<%= @hash_infos.to_json %>">
   <div class="dialogue-npc hidden">
-    <p data-change-speech-box-target="speech"><%= @play.cell_active.npc.question %></p>
+    <p data-play-target="speechActive"></p>
   </div>
-  <div class="dialogue-teacher hidden">
-    <p data-change-speech-box-target="speech"><%= @play.cell_active.npc.question %></p>
+  <div class="dialogue-inactive-npc hidden">
+    <p data-play-target="speechInactive"></p>
   </div>
 
   <%= render "play", play: @play %>
