@@ -27,13 +27,13 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { moveCharacter } from '../components/moveCharacter';
-import { handleSubmit } from '../components/handleSubmit';
+import { enter } from '../components/enter';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  enter();
 });
 document.addEventListener('keydown', moveCharacter);
-document.querySelector('.dialogue-form').addEventListener('submit', handleSubmit);
-
 import "controllers"

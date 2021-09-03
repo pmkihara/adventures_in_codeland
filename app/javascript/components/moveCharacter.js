@@ -1,18 +1,17 @@
 const moveCharacter = (e) => {
-  // -------------------------------------- Character position  --------------------------------------
+  // -------------------------------------- Character settings  --------------------------------------
   const characterCell = document.querySelector('.character');
   const characterDiv = document.getElementById('character');
   const characterSprite = document.querySelector('.character-sprite');
   const charColumn = characterCell.cellIndex;
   const charRow = characterCell.parentElement.rowIndex;
 
-  // -------------------------------------- Character position  --------------------------------------
-
+  // -------------------------------------- Active cell settings  --------------------------------------
 
   const activeCell = document.querySelector('.active');
   const table = document.querySelector('.map-table');
-
-  const dialogue = document.querySelector('.dialogue');
+  const dialogue = document.querySelector('.dialogue-player');
+  const npcBox = document.querySelector('.dialogue-npc');
 
   // -------------------------------------- Active cell functions --------------------------------------
 
@@ -24,9 +23,11 @@ const moveCharacter = (e) => {
 
     if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
       dialogue.classList.remove('hidden');
+      npcBox.classList.remove('hidden');
     }
     else {
       dialogue.classList.add('hidden');
+      npcBox.classList.add('hidden');
     }
   }
 
