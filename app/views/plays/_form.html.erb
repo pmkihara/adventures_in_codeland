@@ -1,6 +1,6 @@
 <%= form_with url: validate_answer_path, method: :post, class: "dialogue-form",
   data: {
-    action: 'submit->change-speech-box#validateAnswer submit->reset-form#reset', 'change-speech-box-target': 'form', controller: ''
+    action: 'submit->play#validateAnswer', 'play-target': 'form'
   } do %>
   <%= text_area_tag :answer, params[:answer], cols: 60, rows: 3, class: "answer-area", placeholder: "Type your answer here and press Enter!" %>
 <% end %>

@@ -34,6 +34,7 @@ const moveCharacter = (e) => {
   // -------------------------------------- Inactive cell settings  --------------------------------------
 
   const inactiveCell = document.querySelector('.inactive_quest');
+  const inactiveNpcBox = document.querySelector('.dialogue-inactive-npc');
 
   // -------------------------------------- Inactive cell functions --------------------------------------
 
@@ -44,11 +45,10 @@ const moveCharacter = (e) => {
     const adjColumn = inactiveCell.cellIndex === cell.cellIndex + 1 || inactiveCell.cellIndex === cell.cellIndex - 1;
 
     if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
-      console.log("entrou?");
-      npcBox.classList.remove('hidden');
+      inactiveNpcBox.classList.remove('hidden');
     }
     else {
-      npcBox.classList.add('hidden');
+      inactiveNpcBox.classList.add('hidden');
     }
   }
 

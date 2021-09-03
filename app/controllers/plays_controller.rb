@@ -19,6 +19,7 @@ class PlaysController < ApplicationController
       hash[:cellStatus] = special_cell.cell_status
       hash[:nameNpc] = special_cell.npc.name
       hash[:question] = special_cell.npc.question
+      hash[:randomSpeech] = special_cell.npc.speak
       @hash_infos << hash
     end
   end
@@ -38,8 +39,8 @@ class PlaysController < ApplicationController
 
   def validate_answer
     if @play.cell_active.npc.correct_answer?(params[:answer])
-      # @play.score += 3
-      # @play.cell_active.cell_status = "inactive_quest"
+      @play.next_active_cell.cell_status = "active_quest"
+      @play.cell_active.cell_status = "inactive_quest"
       render json: { message: "Yay! Correct answer!" }
     else
       render json: { message: "Oh no! Wrong answer!" }
