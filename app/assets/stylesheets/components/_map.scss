@@ -3,6 +3,8 @@
   height: 768px;
   background-size: 896px 768px !important;
   background-color: rgba(0,0,0,0);
+  border: 5px solid black;
+  z-index: 0;
   table {
     margin: 0;
     padding: 0;
@@ -24,4 +26,6 @@
   height: 768px;
   background-size: 896px 768px !important;
   position: absolute;
+  border: 5px solid black;
+  z-index: 1;
 }
