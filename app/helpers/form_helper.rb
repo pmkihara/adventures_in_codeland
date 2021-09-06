@@ -1,9 +1,9 @@
 module FormHelper
   def choose_path
     if current_user.name.nil?
-      # caminho para atualizar o nome
+      validate_name_path
     elsif current_user.age.nil?
-      # caminho para atualizar a idade
+      validate_age_path
     else
       validate_answer_path
     end
