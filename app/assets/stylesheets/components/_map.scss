@@ -1,9 +1,8 @@
 .map {
-  width: 896px;
-  height: 768px;
-  background-size: 896px 768px !important;
+  width: calc(50 * var(--grid-cell));
+  height: calc(46 * var(--grid-cell));
+  background-size: calc(50 * var(--grid-cell)) calc(46 * var(--grid-cell)) !important;
   background-color: rgba(0,0,0,0);
-  border: 5px solid black;
   z-index: 0;
   table {
     margin: 0;
@@ -15,17 +14,26 @@
 
 .map-table {
   td {
-    min-width: 64px;
-    max-width: 64px;
-    height: 64px;
+    min-width: var(--grid-cell);
+    max-width: var(--grid-cell);
+    height: var(--grid-cell);
   }
 }
 
 .map-overlay {
-  width: 896px;
-  height: 768px;
-  background-size: 896px 768px !important;
+  width: calc(14 * var(--grid-cell));
+  height: calc(12 * var(--grid-cell));
+  background-size: calc(14 * var(--grid-cell)) calc(12 * var(--grid-cell)) !important;
   position: absolute;
-  border: 5px solid black;
   z-index: 1;
+}
+
+.map-layer {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.blocked {
+  background-color: rgba($color: red, $alpha: 0.3);
 }

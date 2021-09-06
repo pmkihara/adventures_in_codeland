@@ -8,7 +8,7 @@
 
 .character-sprite {
   position: absolute;
-  background-size: 256px 256px;
+  background-size: calc(128 * var(--pixel-size));
   width: calc(128 * var(--pixel-size));
   height: calc(128 * var(--pixel-size));
 }

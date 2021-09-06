@@ -4,6 +4,14 @@
   display: none;
 }
 
+// ------------------------------ Dialogue layer -------------------------------
+
+.dialogue-layer {
+  position: absolute;
+  z-index: 2;
+}
+
+
 // ------------------------------- Player input --------------------------------
 
 .dialogue-player {
@@ -14,7 +22,6 @@
   position: absolute;
   bottom: 13px;
   width: 896px;
-  z-index: 2;
   form {
     position: relative;
   }
@@ -49,7 +56,6 @@
   font-family: $pixel-text-font;
   font-size: 36px;
   padding: 20px;
-  z-index: 2;
   margin: 20px;
 }
 
@@ -65,5 +71,4 @@
   font-size: 36px;
   padding: 20px;
   margin: 20px;
-  z-index: 2;
 }
