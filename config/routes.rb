@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   patch '/play', to: 'plays#save', as: 'save'
   delete '/play/:id', to: 'plays#destroy', as: 'destroy'
   post '/play/:id', to: 'plays#validate_answer', as: 'validate_answer'
+  post '/play/:id', to: 'plays#validate_name', as: 'validate_name'
+  post '/play/:id', to: 'plays#validate_age', as: 'validate_age'
 end
