@@ -8,7 +8,7 @@ const enter = () => {
 
   document.getElementById("answer").addEventListener("keypress", submitOnEnter);
 
-  document.querySelector("dialogue-form").addEventListener("submit", (event) => {
+  document.querySelector(".dialogue-form").addEventListener("submit", (event) => {
       event.preventDefault();
       console.log("form submitted");
   });

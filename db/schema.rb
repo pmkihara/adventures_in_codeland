@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_173122) do
+ActiveRecord::Schema.define(version: 2021_09_06_132410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(version: 2021_09_01_173122) do
     t.bigint "npc_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "special_cell_id"
     t.index ["npc_id"], name: "index_special_cells_on_npc_id"
     t.index ["play_id"], name: "index_special_cells_on_play_id"
+    t.index ["special_cell_id"], name: "index_special_cells_on_special_cell_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,8 +63,8 @@ ActiveRecord::Schema.define(version: 2021_09_01_173122) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name", null: false
-    t.integer "age", null: false
+    t.string "name"
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -70,4 +72,5 @@ ActiveRecord::Schema.define(version: 2021_09_01_173122) do
   add_foreign_key "plays", "users"
   add_foreign_key "special_cells", "npcs"
   add_foreign_key "special_cells", "plays"
+  add_foreign_key "special_cells", "special_cells"
 end

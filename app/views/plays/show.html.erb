@@ -1,5 +1,5 @@
 <div class="play-container" data-controller="play" data-play-info-value="<%= @hash_infos.to_json %>">
-  <div class="dialogue-npc hidden">
+  <div class="dialogue-npc hidden" data-play-target="boxDialogueNpc">
     <p data-play-target="speechActive"></p>
   </div>
   <div class="dialogue-inactive-npc hidden">
@@ -8,7 +8,7 @@
 
   <%= render "play", play: @play %>
 
-  <div class="dialogue-player hidden">
+  <div class="dialogue-player hidden" data-play-target="boxDialoguePlayer">
     <%= render 'form' %>
   </div>
 

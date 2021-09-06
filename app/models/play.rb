@@ -6,13 +6,12 @@ class Play < ApplicationRecord
   validates :lives, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 3 }
 
   def cell_active
-    special_cells.each do |special_cell|
-      return special_cell if special_cell.cell_status == "active_quest"
-    end
+    special_cells.find_by(cell_status: "active_quest")
   end
 
-  def next_active_cell
-    each_special_cells = special_cells.each
-    return each_special_cells.next if each_special_cells.next.cell_status == "active_quest"
+  def active_next_cell
+    current_active = cell_active
+    current_active&.update(cell_status: "inactive_quest")
+    current_active&.next_cell&.update(cell_status: "active_quest")
   end
 end

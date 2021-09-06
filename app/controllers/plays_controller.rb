@@ -1,26 +1,32 @@
 class PlaysController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[create]
-  before_action :set_play, only: %i[show update destroy validate_answer info_map]
+  before_action :set_play, only: %i[show update destroy validate_answer]
 
   def new
     @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 0, user_position_y: 8, lives: 3)
     @play.user = current_user
-    @play.save
     generate_cells(@play)
-    redirect_to show_path(@play)
+    redirect_to show_path(@play) if @play.save
   end
 
   def show
     @hash_infos = []
+
+    play_infos = {}
+    play_infos[:score] = @play.score
+    play_infos[:user_position_x] = @play.user_position_x
+    play_infos[:user_position_y] = @play.user_position_y
+    play_infos[:lives] = @play.lives
+    @hash_infos << play_infos
     @play.special_cells.each do |special_cell|
-      hash = {}
-      hash[:positionX] = special_cell.position_x
-      hash[:positionY] = special_cell.position_y
-      hash[:cellStatus] = special_cell.cell_status
-      hash[:nameNpc] = special_cell.npc.name
-      hash[:question] = special_cell.npc.question
-      hash[:randomSpeech] = special_cell.npc.speak
-      @hash_infos << hash
+      cell_infos = {}
+      cell_infos[:position_x] = special_cell.position_x
+      cell_infos[:position_y] = special_cell.position_y
+      cell_infos[:cell_status] = special_cell.cell_status
+      cell_infos[:name_npc] = special_cell.npc.name
+      cell_infos[:question] = special_cell.npc.question
+      cell_infos[:random_speech] = special_cell.npc.speak
+      @hash_infos << cell_infos
     end
   end
 
@@ -38,12 +44,14 @@ class PlaysController < ApplicationController
   end
 
   def validate_answer
-    if @play.cell_active.npc.correct_answer?(params[:answer])
-      @play.next_active_cell.cell_status = "active_quest"
-      @play.cell_active.cell_status = "inactive_quest"
-      render json: { message: "Yay! Correct answer!" }
-    else
-      render json: { message: "Oh no! Wrong answer!" }
+    active_cell = @play.cell_active
+    if active_cell
+      if active_cell.npc.correct_answer?(params[:answer])
+        @play.active_next_cell
+        render json: { message: "Yay! Correct answer!", correct: true }
+      else
+        render json: { message: "Oh no! Wrong answer!", correct: false }
+      end
     end
   end
 
@@ -53,9 +61,15 @@ class PlaysController < ApplicationController
     @play = Play.find(params[:id])
   end
 
+  def play_params
+    params.require(:play).permit(:score, :user_position_x, :user_position_y, :lives)
+  end
+
   def generate_cells(play)
-    SpecialCell.create(play: play, npc: generate_npc_rafa, cell_status: "active_quest", position_x: 7, position_y: 5)
-    SpecialCell.create(play: play, npc: generate_npc_neto, cell_status: "inactive_quest", position_x: 1, position_y: 12)
+    neto = SpecialCell.create(play: play, npc: generate_npc_neto, cell_status: "inactive_quest", position_x: 1,
+                              position_y: 12)
+    SpecialCell.create(play: play, npc: generate_npc_rafa, cell_status: "active_quest", position_x: 7, position_y: 5,
+                       next_cell: neto)
   end
 
   def generate_npc_rafa
