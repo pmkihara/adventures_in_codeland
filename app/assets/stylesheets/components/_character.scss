@@ -1,22 +1,16 @@
 /* --------------------------- Character settings --------------------------- */
 .character > div {
-  height: calc(32 * var(--pixel-size));
-  width: calc(32 * var(--pixel-size));
+  height: var(--grid-cell);
+  width: var(--grid-cell);
   overflow: hidden;
   position: relative;
 }
 
 .character-sprite {
   position: absolute;
-  background-size: calc(128 * var(--pixel-size));
-  width: calc(128 * var(--pixel-size));
-  height: calc(128 * var(--pixel-size));
-}
-
-.character-shadow {
-  width: calc(32 * var(--pixel-size));
-  position: absolute;
-  opacity: 50%;
+  background-size: calc(4 * var(--grid-cell));
+  width: calc(4 * var(--grid-cell));
+  height: calc(4 * var(--grid-cell));
 }
 
 /* --------------------------- Character position --------------------------- */

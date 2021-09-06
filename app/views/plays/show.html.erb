@@ -1,8 +1,8 @@
 <div class="play-container" data-controller="play" data-play-info-value="<%= @play_infos.to_json %>">
-  <div class="dialogue-layer"> <%# Sets a layer above the map for the dialogues %>
-    <%= render 'dialogue' %>
-  </div>
-  <div class="map-layer" style="top: 0px; left: 0px"> <%# Sets a layer for the map %>
-    <%= render'map' %>
+  <div class="map-view"> <%# Sets a layer for the map %>
+    <div class="dialogue-layer"> <%# Sets a layer above the map for the dialogues %>
+      <%= render 'dialogue' %>
+    </div>
+      <%= render'map' %>
   </div>
 </div>
