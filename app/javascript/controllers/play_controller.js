@@ -8,6 +8,7 @@ export default class extends Controller {
     info: Array
   }
 
+  // ---------- Sets the dialogues depending on the status of the NPC ----------
   refreshBoxes() {
     this.infoValue.forEach((hashInfo) => {
       if (hashInfo.cellStatus == "active_quest") {
@@ -18,8 +19,8 @@ export default class extends Controller {
     });
   }
 
+  // ---------------------- Places the NPCs when loading -----------------------
   connect() {
-    // Construção do mapa
     this.infoValue.forEach((hashInfo) => {
       const row = document.getElementById(`tr-${hashInfo.positionX}`);
       const columnsOfRow = row.querySelectorAll('td');
@@ -32,6 +33,7 @@ export default class extends Controller {
     this.refreshBoxes();
   }
 
+  // -------------------------- User Input Validation --------------------------
   validateAnswer(event) {
     event.preventDefault();
 
