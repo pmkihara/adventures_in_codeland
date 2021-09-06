@@ -1,6 +1,7 @@
 :root {
-  --pixel-size: 1px; /* Increases the size of the pixel art dinamically*/
-  --grid-cell: calc( var(--pixel-size) * 32 );
+  --pixel-size: 2px; /* Increases the size of the pixel art dinamically*/
+  --grid-size: 32;
+  --grid-cell: calc( var(--pixel-size) * var(--grid-size) );
 }
 
 /* Makes pixel art pixelated instead of blurred when the image is increased */

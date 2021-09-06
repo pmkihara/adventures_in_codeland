@@ -1,12 +1,22 @@
 <%# -------------------------- NPC ACTIVE QUEST BOX   -------------------------- %>
 <div class="dialogue-npc hidden" data-play-target="boxDialogueNpc">
-  <p data-play-target="speechActive"></p>
+  <div class="dialogue-npc-name">
+    <p>NPC Name</p>
+  </div>
+  <div class="dialogue-npc-box">
+    <p data-play-target="speechActive"></p>
+  </div>
 </div>
 <%# -------------------------- NPC NOT ACTIVE QUEST BOX   -------------------------- %>
 <div class="dialogue-inactive-npc hidden">
-  <p data-play-target="speechInactive"></p>
+  <div class="dialogue-npc-name">
+    <p>NPC Name</p>
+  </div>
+  <div class="dialogue-inactive-npc-box">
+    <p data-play-target="speechInactive"></p>
+  </div>
 </div>
 <%# -------------------------- PLAYER INPUT BOX   -------------------------- %>
-<div class="dialogue-player <%= "hidden" unless current_user.age.nil? %>" data-play-target="boxDialoguePlayer">
+<div class="dialogue-player hidden">
   <%= render 'form' %>
 </div>
