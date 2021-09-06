@@ -2,5 +2,5 @@
   data: {
     action: "submit->play##{stimulus_function}", 'play-target': 'form'
   } do %>
-  <%= text_area_tag :answer, params[:answer], cols: 60, rows: 3, class: "answer-area", placeholder: "Type your answer here and press Enter!" %>
+  <%= text_area_tag :answer, params[:answer], cols: 60, rows: 3, class: "answer-area", placeholder: "Type your answer here and press Enter!", id: "answer" %>
 <% end %>
