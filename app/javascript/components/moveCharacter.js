@@ -18,6 +18,7 @@ const moveCharacter = (e) => {
   // -------------------------- Active NPC Settings ---------------------------
   const activeCell = document.querySelector('.active_quest');
   const dialogue = document.querySelector('.dialogue-player');
+  const answerInput = document.getElementById('answer');
   const npcBox = document.querySelector('.dialogue-npc');
 
   // ------------------------- Inactive NPC settings  -------------------------
