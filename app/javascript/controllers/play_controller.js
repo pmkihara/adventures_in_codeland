@@ -89,4 +89,36 @@ export default class extends Controller {
       }
     });
   }
+
+  validateName(event) {
+    event.preventDefault();
+
+    fetch(this.formTarget.action, {
+      method: 'POST',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+      body: new FormData(this.formTarget)
+    })
+    .then(response => response.json())
+    .then((data) => {
+      this.speechActiveTarget.innerText = data.message
+      this.formTarget.reset()
+    });
+    this.refreshBoxes();
+  }
+
+  validateAge(event) {
+    event.preventDefault();
+
+    fetch(this.formTarget.action, {
+      method: 'POST',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+      body: new FormData(this.formTarget)
+    })
+    .then(response => response.json())
+    .then((data) => {
+      this.speechActiveTarget.innerText = data.message
+      this.formTarget.reset()
+    });
+    this.refreshBoxes();
+  }
 }

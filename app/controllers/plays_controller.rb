@@ -54,6 +54,14 @@ class PlaysController < ApplicationController
     end
   end
 
+  def validate_name
+    current_user.name = params[:answer]
+  end
+
+  def validate_age
+    current_user.age = params[:answer]
+  end
+
   private
 
   def set_play
