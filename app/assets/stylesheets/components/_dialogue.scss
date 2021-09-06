@@ -4,6 +4,14 @@
   display: none;
 }
 
+// ------------------------------ Dialogue layer -------------------------------
+
+.dialogue-layer {
+  position: absolute;
+  z-index: 2;
+}
+
+
 // ------------------------------- Player input --------------------------------
 
 .dialogue-player {
@@ -12,7 +20,7 @@
   color: white;
   padding: 20px;
   position: absolute;
-  bottom: 0;
+  bottom: 13px;
   width: 896px;
   form {
     position: relative;
