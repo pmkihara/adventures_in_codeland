@@ -19,24 +19,6 @@ export default class extends Controller {
     });
   }
 
-  updateInfos() {
-    const enumInfos = this.infoValue.special_cells.values();
-    const newArrayInfos = [];
-    const currentElement = enumInfos.next().value;
-    const nextElement = enumInfos.next().value;
-    if (currentElement.cell_status === "active_quest") {
-      currentElement.cell_status = "inactive_quest";
-      newArrayInfos.push(currentElement);
-
-      if (nextElement) {
-        nextElement.cell_status = "active_quest";
-        newArrayInfos.push(nextElement);
-      }
-    }
-
-    this.infoValue.special_cells = newArrayInfos;
-  }
-
   positionPlayer(positionX, positionY) {
     const row = document.getElementById(`tr-${positionX}`);
     const columnsOfRow = row.querySelectorAll('td');
@@ -59,11 +41,22 @@ export default class extends Controller {
     });
   }
 
+  updateInfos() {
+    fetch(`${window.location.href}/update_infos`, {
+      method: 'GET',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() }
+    })
+    .then(response => response.json())
+    .then((data) => {
+      // this.positionPlayer(data.user_position_x, data.user_position_y);
+      this.positionNpcs(data.special_cells);
+      this.refreshBoxes(data.special_cells);
+    });
+  }
+
   connect() {
     // ---------------------- Place the Player when loading -----------------------
-    // this.positionPlayer(this.infoValue.user_position_x, this.infoValue.user_position_y);
-    this.positionNpcs(this.infoValue.special_cells);
-    this.refreshBoxes(this.infoValue.special_cells);
+    this.updateInfos();
   }
 
   // -------------------------- User Input Validation --------------------------
@@ -84,7 +77,6 @@ export default class extends Controller {
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
-          this.connect();
         }, 2000);
       }
     });
