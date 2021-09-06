@@ -1,0 +1,14 @@
+.btn-menu {
+  padding: 8px 16px;
+  background-color: rgb(4, 163, 211);
+  border: 2px solid black;
+  border-radius: 4px;
+  box-shadow: inset 2px 2px 0 rgba($color: #000000, $alpha: 0.3),
+              inset -2px -2px 0 rgba($color: #000000, $alpha: 0.3);
+  font-family: $pixel-text-font;
+  color: white;
+  a:hover {
+    background-color: rgb(50, 200, 246);
+    text-decoration: none;
+  }
+}
