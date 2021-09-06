@@ -2,6 +2,9 @@
 
 .hidden {
   display: none;
+  div {
+    display: none;
+  }
 }
 
 // ------------------------------ Dialogue layer -------------------------------
@@ -17,6 +20,12 @@
 .dialogue-npc {
   position: absolute;
   width: 650px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: $pixel-text-font;
+  font-size: 30px;
+  line-height: 1.2em;
 }
 
 .dialogue-npc-box {
@@ -25,24 +34,18 @@
   border: 4px solid $yellow;
   box-shadow: 0 0 0px 4px black;
   border-radius: 4px;
-  color: white;
-  font-family: $pixel-text-font;
-  font-size: 30px;
   padding: 20px;
-  margin: 20px;
+  margin: 0 0 0 20px;
 }
 
 .dialogue-npc-name {
-  width: 100px;
+  width: 200px;
   background-color: rgba(0, 0, 0, 0.7);
-  border: 4px solid $yellow;
   box-shadow: 0 0 0px 4px black;
   border-radius: 4px;
-  color: white;
-  font-family: $pixel-text-font;
-  font-size: 30px;
-  padding: 20px;
-  margin: 20px;
+  padding: 13px 20px 0 20px;
+  margin: 20px 0 0 20px;
+  line-height: 1em;
 }
 
 .dialogue-inactive-npc {
@@ -52,11 +55,8 @@
   border: 4px solid white;
   box-shadow: 0 0 0px 4px black;
   border-radius: 4px;
-  color: white;
-  font-family: $pixel-text-font;
-  font-size: 30px;
   padding: 20px;
-  margin: 20px;
+  margin: 0 0 0 20px;
 }
 
 // ------------------------------- Player input --------------------------------
