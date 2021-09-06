@@ -3,21 +3,19 @@ class PlaysController < ApplicationController
   before_action :set_play, only: %i[show update destroy validate_answer]
 
   def new
-    @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 0, user_position_y: 8, lives: 3)
+    @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
     @play.user = current_user
     generate_cells(@play)
     redirect_to show_path(@play) if @play.save
   end
 
   def show
-    @hash_infos = []
-
-    play_infos = {}
-    play_infos[:score] = @play.score
-    play_infos[:user_position_x] = @play.user_position_x
-    play_infos[:user_position_y] = @play.user_position_y
-    play_infos[:lives] = @play.lives
-    @hash_infos << play_infos
+    @play_infos = {}
+    @play_infos[:score] = @play.score
+    @play_infos[:user_position_x] = @play.user_position_x
+    @play_infos[:user_position_y] = @play.user_position_y
+    @play_infos[:lives] = @play.lives
+    @play_infos[:special_cells] = []
     @play.special_cells.each do |special_cell|
       cell_infos = {}
       cell_infos[:position_x] = special_cell.position_x
@@ -26,8 +24,9 @@ class PlaysController < ApplicationController
       cell_infos[:name_npc] = special_cell.npc.name
       cell_infos[:question] = special_cell.npc.question
       cell_infos[:random_speech] = special_cell.npc.speak
-      @hash_infos << cell_infos
+      @play_infos[:special_cells] << cell_infos
     end
+    @play_infos
   end
 
   def plays
@@ -35,7 +34,7 @@ class PlaysController < ApplicationController
   end
 
   def save
-    # TODO
+    @play.update(play_params)
   end
 
   def destroy
@@ -66,9 +65,9 @@ class PlaysController < ApplicationController
   end
 
   def generate_cells(play)
-    neto = SpecialCell.create(play: play, npc: generate_npc_neto, cell_status: "inactive_quest", position_x: 1,
-                              position_y: 12)
-    SpecialCell.create(play: play, npc: generate_npc_rafa, cell_status: "active_quest", position_x: 7, position_y: 5,
+    neto = SpecialCell.create(play: play, npc: generate_npc_neto, cell_status: "inactive_quest", position_x: 16,
+                              position_y: 35)
+    SpecialCell.create(play: play, npc: generate_npc_rafa, cell_status: "active_quest", position_x: 21, position_y: 17,
                        next_cell: neto)
   end
 

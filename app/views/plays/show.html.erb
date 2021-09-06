@@ -1,25 +1,11 @@
-<div class="play-container" data-controller="play" data-play-info-value="<%= @hash_infos.to_json %>">
-<<<<<<< HEAD
-  <div class="dialogue-npc hidden" data-play-target="boxDialogueNpc">
-    <p data-play-target="speechActive"></p>
-  </div>
-  <div class="dialogue-inactive-npc hidden">
-    <p data-play-target="speechInactive"></p>
-  </div>
-=======
->>>>>>> d317fee8d6756d460c2a8703550f2f443e91241c
+<div class="play-container" data-controller="play" data-play-info-value="<%= @play_infos.to_json %>">
 
   <div class="dialogue-layer"> <%# Sets a layer above the map for the dialogues %>
     <%= render 'dialogue' %>
   </div>
 
-<<<<<<< HEAD
-  <div class="dialogue-player hidden" data-play-target="boxDialoguePlayer">
-    <%= render 'form' %>
-=======
   <div class="map-layer" style="top: 0px; left: 0px"> <%# Sets a layer for the map %>
     <%= render'map' %>
->>>>>>> d317fee8d6756d460c2a8703550f2f443e91241c
   </div>
 
 </div>

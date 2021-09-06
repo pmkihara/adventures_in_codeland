@@ -10,12 +10,8 @@ const enter = () => {
     document.getElementById("answer").addEventListener("keypress", submitOnEnter);
   }
 
-<<<<<<< HEAD
-  document.querySelector(".dialogue-form").addEventListener("submit", (event) => {
-=======
   if (document.querySelector(".dialogue-form")) {
     document.querySelector(".dialogue-form").addEventListener("submit", (event) => {
->>>>>>> d317fee8d6756d460c2a8703550f2f443e91241c
       event.preventDefault();
       console.log("form submitted");
     });

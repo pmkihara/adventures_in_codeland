@@ -5,51 +5,65 @@ import { csrfToken } from "@rails/ujs";
 export default class extends Controller {
   static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer'];
   static values = {
-    info: Array
+    info: Object
   }
 
   // ---------- Sets the dialogues depending on the status of the NPC ----------
-  refreshBoxes() {
-    this.infoValue.forEach((hashInfo) => {
-      if (hashInfo.cellStatus === "active_quest") {
-        this.speechActiveTarget.innerText = hashInfo.question;
+  refreshBoxes(specialCells) {
+    specialCells.forEach((specialCell) => {
+      if (specialCell.cell_status === "active_quest") {
+        this.speechActiveTarget.innerText = specialCell.question;
       } else {
-        this.speechInactiveTarget.innerText = hashInfo.randomSpeech;
+        this.speechInactiveTarget.innerText = specialCell.random_speech;
       }
     });
   }
 
   updateInfos() {
-    const enumInfos = this.infoValue.values();
+    const enumInfos = this.infoValue.special_cells.values();
     const newArrayInfos = [];
     const currentElement = enumInfos.next().value;
     const nextElement = enumInfos.next().value;
-    if (currentElement.cellStatus === "active_quest") {
-      currentElement.cellStatus = "inactive_quest";
+    if (currentElement.cell_status === "active_quest") {
+      currentElement.cell_status = "inactive_quest";
       newArrayInfos.push(currentElement);
 
       if (nextElement) {
-        nextElement.cellStatus = "active_quest";
+        nextElement.cell_status = "active_quest";
         newArrayInfos.push(nextElement);
       }
     }
 
-    this.infoValue = newArrayInfos;
+    this.infoValue.special_cells = newArrayInfos;
   }
 
-  // ---------------------- Places the NPCs when loading -----------------------
-  connect() {
-    this.infoValue.forEach((hashInfo) => {
-      const row = document.getElementById(`tr-${hashInfo.positionX}`);
+  positionPlayer(positionX, positionY) {
+    const row = document.getElementById(`tr-${positionX}`);
+    const columnsOfRow = row.querySelectorAll('td');
+    const column = columnsOfRow[positionY];
+
+    column.className = "";
+    column.classList.add('character')
+  }
+
+  positionNpcs(specialCells) {
+    specialCells.forEach((specialCell) => {
+      const row = document.getElementById(`tr-${specialCell.position_x}`);
       const columnsOfRow = row.querySelectorAll('td');
-      const column = columnsOfRow[hashInfo.positionY];
+      const column = columnsOfRow[specialCell.position_y];
 
       column.className = "";
-      column.classList.add(`npc-${hashInfo.nameNpc}`)
-      column.classList.add(`${hashInfo.cellStatus}`)
+      column.classList.add(`npc-${specialCell.name_npc}`)
+      column.classList.add(`${specialCell.cell_status}`)
       column.classList.add("blocked")
     });
-    this.refreshBoxes();
+  }
+
+  connect() {
+    // ---------------------- Place the Player when loading -----------------------
+    // this.positionPlayer(this.infoValue.user_position_x, this.infoValue.user_position_y);
+    this.positionNpcs(this.infoValue.special_cells);
+    this.refreshBoxes(this.infoValue.special_cells);
   }
 
   // -------------------------- User Input Validation --------------------------
