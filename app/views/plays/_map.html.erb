@@ -4,9 +4,9 @@
 
 <%# -------------------------- MAP  -------------------------- %>
 <div class="map pixel-art" style="background: url(<%= image_path 'map/map_base.png' %>);">
-  <table class="map-table" data-controller="load-map">
+  <table class="map-table">
     <%# row 0-9 %>
-      <tr>
+      <tr id="tr-0">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -58,7 +58,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-1">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -110,7 +110,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-2">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -162,7 +162,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-3">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -214,7 +214,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-4">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -266,7 +266,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-5">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -318,63 +318,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="character">
-          <div id="character">
-            <div class="character-sprite pixel-art character-walking character-down" style="background-image: url(<%= image_path 'cat_sprite.png' %>)"></div>
-          </div>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-      </tr>
-      <tr>
+      <tr id="tr-6">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -426,7 +370,59 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-7">
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+      </tr>
+      <tr id="tr-8">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -478,7 +474,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-9">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -531,7 +527,7 @@
         <td class="blocked"></td>
       </tr>
     <%# row 10-19 %>
-      <tr>
+      <tr id="tr-10">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -583,7 +579,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-11">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -635,7 +631,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-12">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -655,6 +651,11 @@
         <td></td>
         <td></td>
         <td></td>
+        <td class="character">
+          <div id="character">
+            <div class="character-sprite pixel-art character-walking character-down" style="background-image: url(<%= image_path 'cat_sprite.png' %>)"></div>
+          </div>
+        </td>
         <td></td>
         <td></td>
         <td></td>
@@ -674,59 +675,6 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-      </tr>
-      <tr>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
         <td></td>
         <td></td>
         <td></td>
@@ -739,15 +687,15 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-13">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
-        <td class="blocked"></td>
-        <td class="blocked"></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -791,7 +739,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-14">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -843,7 +791,59 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-15">
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+        <td class="blocked"></td>
+      </tr>
+      <tr id="tr-16">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -895,7 +895,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-17">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -947,7 +947,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-18">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -999,7 +999,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-19">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1052,7 +1052,7 @@
         <td class="blocked"></td>
       </tr>
     <%# row 20-29 %>
-      <tr>
+      <tr id="tr-20">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1104,7 +1104,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-21">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1156,7 +1156,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-22">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1208,7 +1208,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-23">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1260,7 +1260,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-24">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1312,7 +1312,7 @@
         <td></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-25">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1364,7 +1364,7 @@
         <td></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-26">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1416,7 +1416,7 @@
         <td></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-27">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1468,7 +1468,7 @@
         <td></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-28">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1520,7 +1520,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-29">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1573,7 +1573,7 @@
         <td class="blocked"></td>
       </tr>
     <%# row 30-39 %>
-      <tr>
+      <tr id="tr-30">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1625,7 +1625,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-31">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1677,7 +1677,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-32">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1729,7 +1729,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-33">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1781,7 +1781,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-34">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1833,7 +1833,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-35">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1885,7 +1885,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-36">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1937,7 +1937,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-37">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -1989,7 +1989,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-38">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2041,7 +2041,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-39">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2093,8 +2093,8 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-    <%# row 40-46 %>
-      <tr>
+    <%# row 40-45 %>
+      <tr id="tr-40">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2146,7 +2146,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-41">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2198,7 +2198,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-42">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2250,7 +2250,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-43">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2302,7 +2302,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-44">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2354,7 +2354,7 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-      <tr>
+      <tr id="tr-45">
         <td class="blocked"></td>
         <td class="blocked"></td>
         <td class="blocked"></td>
@@ -2406,208 +2406,5 @@
         <td class="blocked"></td>
         <td class="blocked"></td>
       </tr>
-
-  </table>
-</div>
-
-
-<div class="map pixel-art" style="background: url(<%= image_path 'map.png' %>);">
-  <table class="map-table">
-    <tr id="tr-0">
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="character">
-        <div id="character">
-          <div class="character-sprite pixel-art character-walking character-down" style="background-image: url(<%= image_path 'cat_sprite.png' %>)"></div>
-        </div>
-      </td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-1">
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-2">
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-3">
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-4">
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-5">
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-6">
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-7">
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-8">
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-9">
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-10">
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-    </tr>
-    <tr id="tr-11">
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-      <td class="blocked"></td>
-    </tr>
   </table>
 </div>

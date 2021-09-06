@@ -65,16 +65,16 @@ const moveCharacter = (e) => {
 
   const moveMap = (key) => {
     if (key === 'ArrowDown') {
-      mapTopPosition -= 64;
+      mapTopPosition -= 32;
     }
     else if (key === 'ArrowUp') {
-      mapTopPosition += 64;
+      mapTopPosition += 32;
     }
     else if (key === 'ArrowRight') {
-      mapLeftPosition -= 64;
+      mapLeftPosition -= 32;
     }
     else if (key === 'ArrowLeft') {
-      mapLeftPosition += 64;
+      mapLeftPosition += 32;
     }
 
     mapLayer.style.top = `${mapTopPosition}px`;
