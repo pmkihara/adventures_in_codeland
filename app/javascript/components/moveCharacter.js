@@ -1,19 +1,32 @@
+import { map } from "jquery";
+
 const moveCharacter = (e) => {
-  // -------------------------------------- Character settings  --------------------------------------
+
+  // ------------------------------ Map Settings -------------------------------
+  const table = document.querySelector('.map-table');
+  const mapLayer = document.querySelector('.map-layer');
+  var mapTopPosition = Number.parseInt(mapLayer.style.top, 10);
+  var mapLeftPosition = Number.parseInt(mapLayer.style.left, 10);
+
+  // --------------------------- Character Settings ----------------------------
   const characterCell = document.querySelector('.character');
   const characterDiv = document.getElementById('character');
   const characterSprite = document.querySelector('.character-sprite');
   const charColumn = characterCell.cellIndex;
   const charRow = characterCell.parentElement.rowIndex;
 
-  // -------------------------------------- Active cell settings  --------------------------------------
-
+  // -------------------------- Active NPC Settings ---------------------------
   const activeCell = document.querySelector('.active_quest');
-  const table = document.querySelector('.map-table');
   const dialogue = document.querySelector('.dialogue-player');
   const npcBox = document.querySelector('.dialogue-npc');
 
-  // -------------------------------------- Active cell functions --------------------------------------
+  // ------------------------- Inactive NPC settings  -------------------------
+
+  const inactiveCell = document.querySelector('.inactive_quest');
+  const inactiveNpcBox = document.querySelector('.dialogue-inactive-npc');
+
+  // ------------------ Function: Display the dialogue boxes -------------------
+  // ------------------------ when near an Active Cell -------------------------
 
   const nearActiveCell = (cell) => {
     const sameRow = activeCell.parentElement.rowIndex === cell.parentElement.rowIndex;
@@ -31,12 +44,8 @@ const moveCharacter = (e) => {
     }
   }
 
-  // -------------------------------------- Inactive cell settings  --------------------------------------
-
-  const inactiveCell = document.querySelector('.inactive_quest');
-  const inactiveNpcBox = document.querySelector('.dialogue-inactive-npc');
-
-  // -------------------------------------- Inactive cell functions --------------------------------------
+  // ------------------ Function: Display the dialogue boxes -------------------
+  // ----------------------- when near an Inactive Cell ------------------------
 
   const nearInactiveCell = (cell) => {
     const sameRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex;
@@ -52,70 +61,68 @@ const moveCharacter = (e) => {
     }
   }
 
-  // -------------------------------------- Movement functions -----------------------------------------
+  // ------------- Function: Move the map when the character moves -------------
 
-  const moveDown = (column, row) => {
-    const destinationCell = table.rows[row + 1].cells[column]
-    if (!(destinationCell.classList.contains('blocked'))) {
-      destinationCell.appendChild(characterDiv);
-      destinationCell.classList.add('character');
-      characterCell.classList.remove('character');
-      nearInactiveCell(destinationCell);
-      nearActiveCell(destinationCell);
+  const moveMap = (key) => {
+    if (key === 'ArrowDown') {
+      mapTopPosition -= 64;
     }
-  }
-  const moveUp = (column, row) => {
-    const destinationCell = table.rows[row - 1].cells[column]
-    if (!(destinationCell.classList.contains('blocked'))) {
-      destinationCell.appendChild(characterDiv);
-      destinationCell.classList.add('character');
-      characterCell.classList.remove('character');
-      nearInactiveCell(destinationCell);
-      nearActiveCell(destinationCell);
+    else if (key === 'ArrowUp') {
+      mapTopPosition += 64;
     }
-  }
-  const moveRight = (column, row) => {
-    const destinationCell = table.rows[row].cells[column + 1]
-    if (!(destinationCell.classList.contains('blocked'))) {
-      destinationCell.appendChild(characterDiv);
-      destinationCell.classList.add('character');
-      characterCell.classList.remove('character');
-      nearInactiveCell(destinationCell);
-      nearActiveCell(destinationCell);
+    else if (key === 'ArrowRight') {
+      mapLeftPosition -= 64;
     }
+    else if (key === 'ArrowLeft') {
+      mapLeftPosition += 64;
+    }
+
+    mapLayer.style.top = `${mapTopPosition}px`;
+    mapLayer.style.left = `${mapLeftPosition}px`;
   }
-  const moveLeft = (column, row) => {
-    const destinationCell = table.rows[row].cells[column - 1]
+
+  // --------------------- Function: Moves the character  ----------------------
+  const move = (destinationCell, key) => {
     if (!(destinationCell.classList.contains('blocked'))) {
+      // Moves the character if it's not a collision path
       destinationCell.appendChild(characterDiv);
       destinationCell.classList.add('character');
       characterCell.classList.remove('character');
+
+      // Activates the NPC dialogue if near their cell
       nearInactiveCell(destinationCell);
       nearActiveCell(destinationCell);
+
+      // Moves the map
+      moveMap(key);
     }
   }
 
   // -------------------------------------- Key functions --------------------------------------
 
   if (e.key === "ArrowDown") {
-    characterSprite.classList.remove("character-down", "character-right", "character-left", "character-up");
+    characterSprite.classList.remove("character-right", "character-left", "character-up");
     characterSprite.classList.add("character-down");
-    moveDown(charColumn, charRow);
+    const destinationCell = table.rows[charRow + 1].cells[charColumn]
+    move(destinationCell, "ArrowDown");
   }
   else if (e.key === "ArrowUp") {
-    characterSprite.classList.remove("character-down", "character-right", "character-left", "character-up");
+    characterSprite.classList.remove("character-down", "character-right", "character-left");
     characterSprite.classList.add("character-up");
-    moveUp(charColumn, charRow);
+    const destinationCell = table.rows[charRow - 1].cells[charColumn]
+    move(destinationCell, "ArrowUp");
   }
   else if (e.key === "ArrowRight") {
-    characterSprite.classList.remove("character-down", "character-right", "character-left", "character-up");
+    characterSprite.classList.remove("character-down", "character-left", "character-up");
     characterSprite.classList.add("character-right");
-    moveRight(charColumn, charRow);
+    const destinationCell = table.rows[charRow].cells[charColumn + 1]
+    move(destinationCell, "ArrowRight");
   }
   else if (e.key === "ArrowLeft") {
-    characterSprite.classList.remove("character-down", "character-right", "character-left", "character-up");
+    characterSprite.classList.remove("character-down", "character-right", "character-up");
     characterSprite.classList.add("character-left");
-    moveLeft(charColumn, charRow);
+    const destinationCell = table.rows[charRow].cells[charColumn - 1]
+    move(destinationCell, "ArrowLeft");
   }
 }
 
