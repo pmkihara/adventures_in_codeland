@@ -38,6 +38,7 @@ const moveCharacter = (e) => {
     if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
       dialogue.classList.remove('hidden');
       npcBox.classList.remove('hidden');
+      answerInput.focus()
     }
     else {
       dialogue.classList.add('hidden');
