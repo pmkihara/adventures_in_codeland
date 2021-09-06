@@ -1,4 +1,6 @@
 .play-container {
-  margin: 0 auto;
-  display: relative;
+  margin: auto auto;
+  position: relative;
+  width: calc(14 * var(--grid-cell));
+  height: calc(12 * var(--grid-cell));
 }
