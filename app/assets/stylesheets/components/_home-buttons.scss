@@ -25,3 +25,46 @@
   overflow: hidden;
   padding: 20px;
 }
+
+.submit-button {
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(4, 163, 211);
+  width: 100%;
+}
+
+.login-button {
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(4, 163, 211);
+  width: 100%;
+  text-decoration: none;
+  display: inline;
+}
+
+.login-button:hover {
+  padding: 10px 20px;
+  color: black;
+  background-color: rgb(4, 163, 211);
+  width: 100%;
+  text-decoration: none;
+  display: inline;
+}
+
+.login-button-disabled {
+  padding: 10px 20px;
+  color: white;
+  background-color: rgba(4, 163, 211, 0.6);
+  width: 100%;
+  text-decoration: none;
+  display: inline;
+}
+
+.login-button-disabled:hover {
+  padding: 10px 20px;
+  color: white;
+  background-color: rgba(4, 163, 211, 0.6);
+  width: 100%;
+  text-decoration: none;
+  display: inline;
+}
