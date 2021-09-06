@@ -92,8 +92,10 @@ const moveCharacter = (e) => {
       characterCell.classList.remove('character');
 
       // Activates the NPC dialogue if near their cell
+      if (activeCell) {
+        nearActiveCell(destinationCell);
+      }
       nearInactiveCell(destinationCell);
-      nearActiveCell(destinationCell);
 
       // Moves the map
       moveMap(key);
