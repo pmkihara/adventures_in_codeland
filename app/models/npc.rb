@@ -3,7 +3,7 @@ require 'roberto_barros'
 class Npc < ApplicationRecord
   has_one :special_cell
 
-  validates :name, :img, :teacher, presence: true
+  validates :name, presence: true
 
   def speak
     RobertoBarros.quote
