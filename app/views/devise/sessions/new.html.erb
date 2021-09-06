@@ -3,10 +3,11 @@
     <div class="home-title text-center">
       <h2>Welcome, Adventurer!</h1>
     </div>
+    <%= link_to 'X', root_path, class: 'x-back-home' %>
 
-    <div class="form-inputs">
-      <div class="form-group">
-        <%= link_to 'Login', new_path, class: 'login-button-disabled'%>
+    <div class="form-inputs", style="width: 424px">
+      <div class="form-group d-flex">
+        <%= link_to 'Log in', new_path, class: 'login-button-disabled'%>
         <%= link_to 'Sign up', new_user_registration_path, class: 'login-button' %>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
