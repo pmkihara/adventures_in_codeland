@@ -8,9 +8,9 @@
 
 .character-sprite {
   position: absolute;
-  background-size: calc(128 * var(--pixel-size));
-  width: calc(128 * var(--pixel-size));
-  height: calc(128 * var(--pixel-size));
+  background-size: calc(4 * var(--grid-cell));
+  width: calc(4 * var(--grid-cell));
+  height: calc(4 * var(--grid-cell));
 }
 
 /* --------------------------- Character position --------------------------- */
