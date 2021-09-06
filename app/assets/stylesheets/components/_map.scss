@@ -1,3 +1,19 @@
+// Div with the map crop - doesn't move
+.map-view {
+  width: calc(11 * var(--grid-cell));
+  height: calc(11 * var(--grid-cell));
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+// Div with both the map and the layer over the map
+.map-layer {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+// Div with the map and table
 .map {
   width: calc(50 * var(--grid-cell));
   height: calc(46 * var(--grid-cell));
@@ -20,18 +36,13 @@
   }
 }
 
+// Div with the map overlay (layer that will be above the character)
 .map-overlay {
   width: calc(14 * var(--grid-cell));
   height: calc(12 * var(--grid-cell));
   background-size: calc(14 * var(--grid-cell)) calc(12 * var(--grid-cell)) !important;
   position: absolute;
   z-index: 1;
-}
-
-.map-layer {
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
 .blocked {
