@@ -1,3 +1,32 @@
 body {
   overflow: hidden;
 }
+
+// Sets the position of the layers
+
+.menu-group {
+  z-index: 5;
+  position: relative;
+  top: 15px;
+  right: 15px;
+}
+
+.dialogue-layer {
+  z-index: 3;
+}
+
+.quest {
+  z-index:3;
+}
+
+.answer-submit {
+  z-index: 2;
+}
+
+.map-overlay {
+  z-index: 1;
+}
+
+.map {
+  z-index: 0;
+}

@@ -19,7 +19,6 @@
   height: calc(46 * var(--grid-cell));
   background-size: calc(50 * var(--grid-cell)) calc(46 * var(--grid-cell)) !important;
   background-color: rgba(0,0,0,0);
-  z-index: 0;
   table {
     margin: 0;
     padding: 0;
@@ -42,7 +41,6 @@
   height: calc(12 * var(--grid-cell));
   background-size: calc(14 * var(--grid-cell)) calc(12 * var(--grid-cell)) !important;
   position: absolute;
-  z-index: 1;
 }
 
 .blocked {

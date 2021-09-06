@@ -23,7 +23,7 @@ const moveCharacter = (e) => {
 
   // ------------------------- Inactive NPC settings  -------------------------
 
-  const inactiveCell = document.querySelector('.inactive_quest');
+  const inactiveCells = document.querySelectorAll('.inactive_quest');
   const inactiveNpcBox = document.querySelector('.dialogue-inactive-npc');
 
   // ------------------ Function: Display the dialogue boxes -------------------
@@ -50,17 +50,21 @@ const moveCharacter = (e) => {
   // ----------------------- when near an Inactive Cell ------------------------
 
   const nearInactiveCell = (cell) => {
-    const sameRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex;
-    const adjRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex + 1 || inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex - 1;
-    const sameColumn = inactiveCell.cellIndex === cell.cellIndex;
-    const adjColumn = inactiveCell.cellIndex === cell.cellIndex + 1 || inactiveCell.cellIndex === cell.cellIndex - 1;
+    inactiveCells.forEach((inactiveCell) => {
+      const sameRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex;
+      const adjRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex + 1 || inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex - 1;
+      const sameColumn = inactiveCell.cellIndex === cell.cellIndex;
+      const adjColumn = inactiveCell.cellIndex === cell.cellIndex + 1 || inactiveCell.cellIndex === cell.cellIndex - 1;
 
-    if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
-      inactiveNpcBox.classList.remove('hidden');
-    }
-    else {
-      inactiveNpcBox.classList.add('hidden');
-    }
+      if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
+        inactiveNpcBox.classList.remove('hidden');
+        console.log(inactiveCell)
+      }
+      else {
+        inactiveNpcBox.classList.add('hidden');
+      }
+    })
+
   }
 
   // ------------- Function: Move the map when the character moves -------------
