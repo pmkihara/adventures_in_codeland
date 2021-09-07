@@ -4,22 +4,10 @@
       <h1>RUBY'S ADVENTURES IN CODELAND</h1>
     </div>
     <div class="home-button-container">
-      <%= link_to plays_path, class: "btn-pixel-full-width" do %>
-        <div>
-          <p>START</p>
-        </div>
-      <% end %>
+      <%= link_to 'Start', plays_path, class: "btn-pixel-full-width" %>
       <div class="home-secondary-buttons">
-        <%= link_to score_path, class: "btn-pixel-45w" do %>
-          <div>
-            <p>Leaderboard</p>
-          </div>
-        <% end %>
-        <%= link_to story_path, class: "btn-pixel-45w" do %>
-          <div>
-            <p>Story</p>
-          </div>
-        <% end %>
+        <%= link_to 'Leaderboard', score_path, class: "btn-pixel-45w" %>
+        <%= link_to 'Story', story_path, class: "btn-pixel-45w" %>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
-<div class="menu-group">
-  <%= link_to plays_path do %>
-    <div class="btn-menu">
-    <p>BACK</p>
-    </div>
-  <% end %>
-</div>
+<li class="p-1 menu-group">
+  <div class="btn-menu" data-toggle="dropdown"><i class="fas fa-bars"></i> Menu</div>
+  <div class="dropdown-menu dropdown-menu-right background-menu" >
+    <%= link_to "Back", plays_path, class: "dropdown-item btn-menu mb-2" %>
+    <%= link_to "Sign-out", destroy_user_session_path, class: "dropdown-item btn-menu" %>
+  </div>
+</li>
