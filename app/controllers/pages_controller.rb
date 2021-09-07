@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   end
 
   def score
+    @plays = Play.all
   end
 end
