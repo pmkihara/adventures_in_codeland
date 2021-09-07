@@ -1,18 +1,28 @@
 .btn-menu {
+  border: 0;
   padding: 8px 16px;
-  background-color: rgb(4, 163, 211);
-  border: 2px solid black;
-  border-radius: 4px;
-  box-shadow: inset 2px 2px 0 rgba($color: #000000, $alpha: 0.3),
-              inset -2px -2px 0 rgba($color: #000000, $alpha: 0.3);
+  background-color: #0888D8;
+  box-shadow: 3px 0 0 black,
+              -3px 0 0 black,
+              0 3px 0 black,
+              0 -3px 0 black,
+              inset 0 -3px 0 rgba(0, 0, 0, 0.2),
+              inset -3px 0 0 rgba(0, 0, 0, 0.2);
   font-family: $pixel-title-font;
   font-size: 16px;
   color: white;
   line-height: 1em;
   &:hover {
-    background-color: rgb(50, 200, 246);
+    background-color: #B40F0F;
+    box-shadow: 3px 0 0 black,
+                -3px 0 0 black,
+                0 3px 0 black,
+                0 -3px 0 black,
+                inset 0 3px 0 rgba(0, 0, 0, 0.2),
+                inset 3px 0 0 rgba(0, 0, 0, 0.2);
   }
   a:hover {
     text-decoration: none;
   }
+
 }
