@@ -17,6 +17,9 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .dialogue-layer {

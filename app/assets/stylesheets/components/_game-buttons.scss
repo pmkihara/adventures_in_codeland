@@ -1,6 +1,6 @@
 .btn-menu {
   border: 0;
-  padding: 8px 16px;
+  padding: 10px 16px 6px;
   background-color: #0888D8;
   box-shadow: 3px 0 0 black,
               -3px 0 0 black,
@@ -9,9 +9,12 @@
               inset 0 -3px 0 rgba(0, 0, 0, 0.2),
               inset -3px 0 0 rgba(0, 0, 0, 0.2);
   font-family: $pixel-title-font;
-  font-size: 16px;
   color: white;
-  line-height: 1em;
+  p {
+    line-height: 1em;
+    margin-bottom: 0;
+    font-size: 20px;
+}
   &:hover {
     background-color: #B40F0F;
     box-shadow: 3px 0 0 black,
@@ -20,6 +23,9 @@
                 0 -3px 0 black,
                 inset 0 3px 0 rgba(0, 0, 0, 0.2),
                 inset 3px 0 0 rgba(0, 0, 0, 0.2);
+    transform: translate(0px, 4px);
+  }
+  a:hover {
     text-decoration: none;
     color: white;
   }
