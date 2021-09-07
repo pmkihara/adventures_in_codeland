@@ -6,23 +6,28 @@ class PlaysController < ApplicationController
 
   def new
     @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
+    authorize @play
     @play.user = current_user
     generate_cells(@play)
     redirect_to show_path(@play) if @play.save
   end
 
   def show
+    authorize @play
   end
 
   def plays
+    authorize @plays
     @plays = Play.where(user: current_user)
   end
 
   def save
+    authorize @play
     @play.update(play_params)
   end
 
   def destroy
+    authorize @play
     @play.destroy
     redirect_to saves_path
   end

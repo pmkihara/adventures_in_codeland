@@ -4,9 +4,6 @@ import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
   static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer'];
-  static values = {
-    info: Object
-  }
 
   // ---------- Sets the dialogues depending on the status of the NPC ----------
   refreshBoxes(specialCells) {
