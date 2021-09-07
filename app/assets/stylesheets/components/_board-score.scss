@@ -24,8 +24,13 @@
 .score-table {
   height: 400px;
   width: 100%;
+  table-layout: auto;
 }
 
-.name-column {
-  flex-grow: 2;
+.rank-column {
+  width: 20%;
+}
+
+.score-column {
+  width: 20%;
 }
