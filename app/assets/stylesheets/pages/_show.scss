@@ -12,13 +12,50 @@ body {
   border: 6px solid white;
 }
 
-// Div with the final score (should be 
+// Div with the final score (should be
 
 .final-score {
   position: absolute;
-  background-color: rgba($color: #000000, $alpha: 0.7);
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.8);
   width: 100vw;
-  height: 10vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-container {
+  max-width: 800px;
+  margin: 20px;
+  text-align: center;
+  h2 {
+    font-family: 'Slackey';
+    font-size: 100px;
+    text-align: center;
+    color: rgba($color: rgb(255, 196, 0), $alpha: 0.8);
+    line-height: 1.2em;
+    text-shadow: 0 6px 0 #1e0606;
+  }
+  p {
+    color: white;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+  .btn-pixel-full-width {
+    margin-top: 20px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.score-number {
+  margin-bottom: 0;
+  color: rgb(255, 196, 0);
+  background-color: black;
+  padding: 10px;
 }
 
 // Sets the position of the layers

@@ -10,10 +10,12 @@
             <p>Start a new Adventure</p>
           </div>
         <% end %>
-        <%= link_to show_path(:id => current_user.play), class: "btn-pixel-full-width ml-5" do %>
-          <div>
-            <p>Continuous an Adventure</p>
-          </div>
+        <% if current_user.play %>
+          <%= link_to show_path(current_user.play), class: "btn-pixel-full-width ml-5" do %>
+            <div>
+              <p>Continue a previous Adventure</p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
