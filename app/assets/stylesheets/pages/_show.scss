@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  background-color: #70C8A0;
 }
 
 // Div with the map crop - doesn't move
@@ -8,6 +9,7 @@ body {
   height: calc(11 * var(--grid-cell));
   overflow: hidden;
   position: relative;
+  border: 6px solid white;
 }
 
 // Sets the position of the layers
@@ -17,6 +19,9 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .dialogue-layer {

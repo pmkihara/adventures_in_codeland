@@ -72,16 +72,12 @@ const moveCharacter = (e) => {
 
   // ------------------- Function: Activate the dialogue boxes -------------------
 
-
   const activateBoxes = (destinationCell) => {
     if (activeCell) {
       nearActiveCell(destinationCell);
     }
-    else {
-      nearInactiveCell(destinationCell);
-    }
+    nearInactiveCell(destinationCell);
   }
-
 
   // ------------- Function: Move the map when the character moves -------------
 

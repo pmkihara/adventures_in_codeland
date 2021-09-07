@@ -1,3 +1,7 @@
 <div class="menu-group">
-  <%= button_to 'MENU', destroy_user_session_path, method: :delete, class: 'btn-menu' %>
+  <%= link_to plays_path do %>
+    <div class="btn-menu">
+    <p>BACK</p>
+    </div>
+  <% end %>
 </div>
