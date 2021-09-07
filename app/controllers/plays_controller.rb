@@ -5,7 +5,8 @@ class PlaysController < ApplicationController
   include GenerateCells
 
   def new
-    @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
+    # Play.where(user: current_user).destroy_all if current_user.has_a_play?
+    @play = Play.new(score: 1000, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
     authorize @play
     @play.user = current_user
     generate_cells(@play)
@@ -37,10 +38,12 @@ class PlaysController < ApplicationController
     return unless active_cell
 
     if active_cell.npc.correct_answer?(params[:answer])
+      render json: { message: random_phrase_correct(@play), correct: true }
       @play.active_next_cell
-      render json: { message: "Yay! Correct answer!", correct: true }
     else
-      render json: { message: "Oh no! Wrong answer!", correct: false }
+      @play.score -= 10
+      @play.lives -= 1
+      render json: { message: random_phrase_incorrect_and_tip(@play), correct: false }
     end
   end
 
@@ -64,6 +67,26 @@ class PlaysController < ApplicationController
   end
 
   private
+
+  def random_phrase_correct(play)
+    if play.cell_active.next_cell
+      npc_name = play.cell_active.next_cell.npc.name.capitalize
+      phrases = ["Nice Ruby! Now, you must find the #{npc_name}",
+                 "Great work! I think #{npc_name} can help you escape from here",
+                 "Well done! Go after our great friend #{npc_name} and he'll even help!"]
+      phrases.sample
+    else
+      "Yay! Correct answer! Now you can go home!"
+    end
+  end
+
+  def random_phrase_incorrect_and_tip(play)
+    phrases = ["Oh no! Incorrect answer!",
+               "Try again buddy! perhaps",
+               "Wrong answer :(. Perhaps this can help: "]
+    tips = [play.cell_active.npc.tip1, play.cell_active.npc.tip2, play.cell_active.npc.tip3].compact
+    "#{phrases.sample} #{tips.sample}"
+  end
 
   def set_play
     @play = Play.find(params[:id])
