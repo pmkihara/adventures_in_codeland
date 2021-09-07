@@ -3,10 +3,9 @@ import { csrfToken } from "@rails/ujs";
 
 
 export default class extends Controller {
-  static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer'];
+  static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer', 'finalScore'];
 
   // ---------- Sets the dialogues depending on the status of the NPC ----------
-
   refreshBoxes(specialCells) {
     specialCells.forEach((specialCell) => {
       if (specialCell.cell_status === "active_quest") {
@@ -15,6 +14,7 @@ export default class extends Controller {
     });
   }
 
+  // ---------- Set position player in map ----------
   positionPlayer(positionX, positionY) {
     const row = document.getElementById(`tr-${positionX}`);
     const columnsOfRow = row.querySelectorAll('td');
@@ -24,6 +24,7 @@ export default class extends Controller {
     column.classList.add('character')
   }
 
+  // ---------- Set position npcs in map ----------
   positionNpcs(specialCells) {
     specialCells.forEach((specialCell) => {
       const row = document.getElementById(`tr-${specialCell.position_x}`);
@@ -37,6 +38,13 @@ export default class extends Controller {
     });
   }
 
+  // ---------- Check game ----------
+  checkGame(gameOver) {
+    //tirar a hidden e colocar a final score
+    console.log(this.finalScoreTarget);
+  }
+
+  // ---------- Request new info's for refresh play ----------
   updateInfos() {
     fetch(`${window.location.href}/update_infos`, {
       method: 'GET',
@@ -47,11 +55,12 @@ export default class extends Controller {
       // this.positionPlayer(data.user_position_x, data.user_position_y);
       this.positionNpcs(data.special_cells);
       this.refreshBoxes(data.special_cells);
+      // this.checkGame(data.game_over);
     });
   }
 
   connect() {
-    // ---------------------- Place the Player when loading -----------------------
+    // ---------------------- Load game -----------------------
     this.updateInfos();
   }
 

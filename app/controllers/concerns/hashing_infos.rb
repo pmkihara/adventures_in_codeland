@@ -10,7 +10,7 @@ module HashingInfos
     play_infos[:score] = play.score
     play_infos[:user_position_x] = play.user_position_x
     play_infos[:user_position_y] = play.user_position_y
-    play_infos[:lives] = play.lives
+    play_infos[:elapsed_time] = play.end_time - play.start_time if play.end_time
     play_infos[:special_cells] = []
     hashing_special_cells_info(play.special_cells, play_infos)
   end

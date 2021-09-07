@@ -8,7 +8,7 @@ class PlaysController < ApplicationController
 
   def new
     Play.where(user: current_user).destroy_all if current_user.has_a_play?
-    @play = Play.new(score: 1000, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
+    @play = Play.new(score: 100, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
     authorize @play
     @play.user = current_user
     generate_cells(@play)
@@ -42,9 +42,9 @@ class PlaysController < ApplicationController
 
     if active_cell.npc.correct_answer?(params[:answer])
       @play.active_next_cell
+      @play.check_if_game_over
       render json: { message: random_phrase_correct(@play), correct: true }
     else
-      @play.punishing
       render json: { message: random_phrase_incorrect_and_tip(@play), correct: false }
     end
   end

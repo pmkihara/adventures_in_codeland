@@ -2,7 +2,7 @@ class Play < ApplicationRecord
   belongs_to :user
   has_many :special_cells, dependent: :destroy
 
-  validates :user, :score, :start_time, :user_position_x, :user_position_y, :lives, presence: true
+  validates :user, :score, :start_time, :user_position_x, :user_position_y, presence: true
   validates :lives, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 3 }
 
   def cell_active
@@ -15,12 +15,10 @@ class Play < ApplicationRecord
     current_active&.next_cell&.update(cell_status: "active_quest")
   end
 
-  def game_over?
-    @lives.zero?
-  end
+  def check_if_game_over
+    return unless cell_active.nil?
 
-  def punishing
-    @score -= 10
-    @lives -= 1
+    @end_time = Time.now.to_i
+    @score /= @end_time - @start_time
   end
 end
