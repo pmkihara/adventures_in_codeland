@@ -1,0 +1,105 @@
+.form-title {
+  padding: 0 60px;
+  max-width: 700px;
+
+  h2 {
+    font-family: 'Slackey';
+    font-size: 50px;
+    text-align: center;
+    color: rgba(218, 18, 18, 0.8);
+    line-height: 1.2em;
+    text-shadow: 0 6px 0 #1e0606;
+  }
+}
+
+.btn-form-main {
+  padding: 8px 16px 4px;
+  background-color: #0888D8;
+  box-shadow: 6px 0 0 black,
+    -6px 0 0 black,
+    0 6px 0 black,
+    0 -6px 0 black,
+    inset 0 -6px 0 rgba(0, 0, 0, 0.2),
+    inset -6px 0 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+
+  &:hover {
+    background-color: #B40F0F;
+    box-shadow: 6px 0 0 black,
+      -6px 0 0 black,
+      0 6px 0 black,
+      0 -6px 0 black,
+      inset 0 6px 0 rgba(0, 0, 0, 0.2),
+      inset 6px 0 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+}
+
+.btn-form-secondary {
+  padding: 8px 16px 4px;
+  background-color: #0888D8;
+  box-shadow: 6px 0 0 black,
+    -6px 0 0 black,
+    0 6px 0 black,
+    0 -6px 0 black,
+    inset 0 -6px 0 rgba(0, 0, 0, 0.2),
+    inset -6px 0 0 rgba(0, 0, 0, 0.2);
+  width: 40%;
+  text-align: center;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  color: white;
+
+  &:hover {
+    background-color: #B40F0F;
+    color: black;
+    box-shadow: 6px 0 0 black,
+      -6px 0 0 black,
+      0 6px 0 black,
+      0 -6px 0 black,
+      inset 0 6px 0 rgba(0, 0, 0, 0.2),
+      inset 6px 0 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+}
+
+.btn-form-secondary-disable {
+  padding: 8px 16px 4px;
+  background-color: #0888D8;
+  opacity: 70%;
+  box-shadow: 6px 0 0 black,
+    -6px 0 0 black,
+    0 6px 0 black,
+    0 -6px 0 black,
+    inset 0 -6px 0 rgba(0, 0, 0, 0.2),
+    inset -6px 0 0 rgba(0, 0, 0, 0.2);
+  width: 40%;
+  text-align: center;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  color: white;
+
+  &:hover {
+    background-color: #B40F0F;
+    color: black;
+    opacity: 100%;
+    box-shadow: 6px 0 0 black,
+      -6px 0 0 black,
+      0 6px 0 black,
+      0 -6px 0 black,
+      inset 0 6px 0 rgba(0, 0, 0, 0.2),
+      inset 6px 0 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+}
+
+.fonts {
+  font-family: 'Slackey';
+}
+
+.fonts-link {
+  font-family: 'Slackey';
+  color:black
+}
