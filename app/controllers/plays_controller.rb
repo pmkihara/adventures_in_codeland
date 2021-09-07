@@ -5,7 +5,7 @@ class PlaysController < ApplicationController
   include GenerateCells
 
   def new
-    # Play.where(user: current_user).destroy_all if current_user.has_a_play?
+    Play.where(user: current_user).destroy_all if current_user.has_a_play?
     @play = Play.new(score: 1000, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
     authorize @play
     @play.user = current_user
