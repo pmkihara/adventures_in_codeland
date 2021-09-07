@@ -19,9 +19,14 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  cursor: pointer;
   a:hover {
     text-decoration: none;
   }
+}
+
+.background-menu {
+  background-color: transparent;
 }
 
 .dialogue-layer {
