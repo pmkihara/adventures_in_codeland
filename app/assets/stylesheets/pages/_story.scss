@@ -2,6 +2,8 @@ p {
   font-family: $pixel-title-font;
   font-size: 24px;
 }
-body {
-  background-color: #0888D8;
+
+.story-text {
+  overflow-y: scroll;
+
 }

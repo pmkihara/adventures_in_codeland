@@ -22,8 +22,6 @@
   display: flex;
   flex-direction: column;
   color: white;
-  font-family: $pixel-text-font;
-  font-size: 30px;
   line-height: 1.2em;
 }
 
@@ -35,20 +33,27 @@
   border-radius: 4px;
   padding: 20px;
   margin: 0 0 0 20px;
+  p {
+      font-family: $pixel-text-font;
+      font-size: 30px;
+  }
 }
 
 .dialogue-npc-name {
-  width: 200px;
+  width: 250px;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 0px 4px black;
   border-radius: 4px;
   padding: 13px 20px 0 20px;
   margin: 20px 0 0 20px;
   line-height: 1em;
+  p {
+    font-size: 20px;
+  }
 }
 
 .dialogue-inactive-npc {
-  position: absolute;
+  position: relative;
   width: 650px;
   display: flex;
   flex-direction: column;
@@ -56,6 +61,7 @@
   font-family: $pixel-text-font;
   font-size: 30px;
   line-height: 1.2em;
+  top: 20px;
 }
 
 .dialogue-inactive-npc-box {
@@ -66,6 +72,10 @@
   border-radius: 4px;
   padding: 20px;
   margin: 0 0 0 20px;
+  p {
+    font-family: $pixel-text-font;
+    font-size: 30px;
+  }
 }
 
 // ------------------------------- Player input --------------------------------
