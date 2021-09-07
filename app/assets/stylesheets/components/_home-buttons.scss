@@ -99,8 +99,12 @@
   opacity: 1;
   }
 }
-.btn-home-main {
-  padding: 18px 16px 14px;
+
+// --------------------- Buttons with pixel art simulation ---------------------
+
+
+.btn-pixel-full-width {
+  padding: 10px 16px 6px;
   background-color: #0888D8;
   box-shadow: 6px 0 0 black,
               -6px 0 0 black,
@@ -119,10 +123,11 @@
                 inset 0 6px 0 rgba(0, 0, 0, 0.2),
                 inset 6px 0 0 rgba(0, 0, 0, 0.2);
     text-decoration: none;
+    transform: translate(0px, 4px);
   }
   p {
     font-family: $pixel-title-font;
-    font-size: 24px;
+    font-size: 30px;
     color: white;
     margin: 0;
   }
@@ -131,7 +136,7 @@
     color: white;
   }
 }
-.btn-home-secondary {
+.btn-pixel-45w {
   padding: 8px 16px 4px;
   background-color: #0888D8;
   box-shadow: 6px 0 0 black,
@@ -141,6 +146,7 @@
               inset 0 -6px 0 rgba(0, 0, 0, 0.2),
               inset -6px 0 0 rgba(0, 0, 0, 0.2);
   width: 45%;
+  min-width: 230px;
   text-align: center;
   &:hover {
     background-color: #B40F0F;
@@ -151,6 +157,7 @@
                 inset 0 6px 0 rgba(0, 0, 0, 0.2),
                 inset 6px 0 0 rgba(0, 0, 0, 0.2);
     text-decoration: none;
+    transform: translate(0px, 4px);
   }
   p {
     font-family: $pixel-title-font;
