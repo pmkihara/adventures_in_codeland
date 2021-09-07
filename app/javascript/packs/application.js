@@ -29,7 +29,6 @@ import "bootstrap";
 import { moveCharacter } from '../components/moveCharacter';
 import { enter } from '../components/enter';
 
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();

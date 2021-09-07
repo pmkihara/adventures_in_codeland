@@ -1,5 +1,3 @@
-import { map } from "jquery";
-
 const moveCharacter = (e) => {
 
   // ------------------------------ Map Settings -------------------------------
@@ -15,27 +13,53 @@ const moveCharacter = (e) => {
   const charColumn = characterCell.cellIndex;
   const charRow = characterCell.parentElement.rowIndex;
 
-  // -------------------------- Active NPC Settings ---------------------------
+  // ---------------------------- Active NPC Settings ----------------------------
   const activeCell = document.querySelector('.active_quest');
   const dialogue = document.querySelector('.dialogue-player');
   const answerInput = document.getElementById('answer');
   const npcBox = document.querySelector('.dialogue-npc');
 
-  // ------------------------- Inactive NPC settings  -------------------------
+  // -------------------------- Inactive NPC settings  ---------------------------
 
-  const inactiveCells = document.querySelectorAll('.inactive_quest');
+  const selectInactiveCells = document.querySelectorAll('.inactive_quest');
+  const inactiveCells = [...selectInactiveCells];
   const inactiveNpcBox = document.querySelector('.dialogue-inactive-npc');
+
+  // -------------------------- Function: checks if the --------------------------
+  // ----------------- Destination Cell is near a Special Cell  ------------------
+
+  const isNearSpecialCell = (specialCell, destinationCell) => {
+    const sameRow = specialCell.parentElement.rowIndex === destinationCell.parentElement.rowIndex;
+    const adjRow = specialCell.parentElement.rowIndex === destinationCell.parentElement.rowIndex + 1 || specialCell.parentElement.rowIndex === destinationCell.parentElement.rowIndex - 1;
+    const sameColumn = specialCell.cellIndex === destinationCell.cellIndex;
+    const adjColumn = specialCell.cellIndex === destinationCell.cellIndex + 1 || specialCell.cellIndex === destinationCell.cellIndex - 1;
+
+    return (sameRow && adjColumn) || (sameColumn && adjRow);
+  }
+
+  const isAnyInactiveCellNear = (destinationCell) => {
+    return inactiveCells.some(function (inactiveCell) {
+      return isNearSpecialCell(inactiveCell, destinationCell);
+    }, [destinationCell]);
+  }
+
+  // ------------------- Function: Display the dialogue boxes --------------------
+  // ------------------------ when near an Inactive Cell -------------------------
+
+  const nearInactiveCell = (destinationCell) => {
+    if (isAnyInactiveCellNear(destinationCell)) {
+      inactiveNpcBox.classList.remove('hidden');
+    }
+    else {
+      inactiveNpcBox.classList.add('hidden');
+    }
+  }
 
   // ------------------ Function: Display the dialogue boxes -------------------
   // ------------------------ when near an Active Cell -------------------------
 
-  const nearActiveCell = (cell) => {
-    const sameRow = activeCell.parentElement.rowIndex === cell.parentElement.rowIndex;
-    const adjRow = activeCell.parentElement.rowIndex === cell.parentElement.rowIndex + 1 || activeCell.parentElement.rowIndex === cell.parentElement.rowIndex - 1;
-    const sameColumn = activeCell.cellIndex === cell.cellIndex;
-    const adjColumn = activeCell.cellIndex === cell.cellIndex + 1 || activeCell.cellIndex === cell.cellIndex - 1;
-
-    if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
+  const nearActiveCell = (destinationCell) => {
+    if (isNearSpecialCell(activeCell, destinationCell)) {
       dialogue.classList.remove('hidden');
       npcBox.classList.remove('hidden');
       answerInput.focus()
@@ -46,26 +70,18 @@ const moveCharacter = (e) => {
     }
   }
 
-  // ------------------ Function: Display the dialogue boxes -------------------
-  // ----------------------- when near an Inactive Cell ------------------------
+  // ------------------- Function: Activate the dialogue boxes -------------------
 
-  const nearInactiveCell = (cell) => {
-    inactiveCells.forEach((inactiveCell) => {
-      const sameRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex;
-      const adjRow = inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex + 1 || inactiveCell.parentElement.rowIndex === cell.parentElement.rowIndex - 1;
-      const sameColumn = inactiveCell.cellIndex === cell.cellIndex;
-      const adjColumn = inactiveCell.cellIndex === cell.cellIndex + 1 || inactiveCell.cellIndex === cell.cellIndex - 1;
 
-      if ((sameRow && adjColumn) || (sameColumn && adjRow)) {
-        inactiveNpcBox.classList.remove('hidden');
-        console.log(inactiveCell)
-      }
-      else {
-        inactiveNpcBox.classList.add('hidden');
-      }
-    })
-
+  const activateBoxes = (destinationCell) => {
+    if (activeCell) {
+      nearActiveCell(destinationCell);
+    }
+    else {
+      nearInactiveCell(destinationCell);
+    }
   }
+
 
   // ------------- Function: Move the map when the character moves -------------
 
@@ -96,10 +112,7 @@ const moveCharacter = (e) => {
       characterCell.classList.remove('character');
 
       // Activates the NPC dialogue if near their cell
-      if (activeCell) {
-        nearActiveCell(destinationCell);
-      }
-      nearInactiveCell(destinationCell);
+      activateBoxes(destinationCell)
 
       // Moves the map
       moveMap(key);
