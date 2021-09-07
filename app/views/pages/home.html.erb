@@ -1,86 +1,21 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
     <div class="home-title">
-      <h1>Ruby's Adventures in Codeland</h1>
+      <h1>RUBY'S ADVENTURES IN CODELAND</h1>
     </div>
 
-    <div class="home-buttons">
-      <ul class=list-inline>
-        <li>
-          <%= link_to new_path do %>
-            <i class="fas fa-play-circle"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to score_path do %>
-            <i class="fas fa-trophy"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to story_path do %>
-            <i class="fas fa-cat"></i>
-          <% end %>
-        </li>
-      </ul>
+    <div class="home-button-container">
+      <%= link_to plays_path, class: "btn-home-main" do %>
+        <div><p>START</p></div>
+      <% end %>
+      <div class="home-secondary-buttons">
+        <%= link_to score_path, class: "btn-home-secondary" do %>
+          <div><p>Leaderboard</p></div>
+        <% end %>
+        <%= link_to story_path, class: "btn-home-secondary" do %>
+          <div><p>Story</p></div>
+        <% end %>
+      </div>
     </div>
-
   </div>
 </div>
-
-
-
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(<%= image_path('background-game.png') %>);">
-    <div class="banner-text">
-      <h1>Adventures in Codeland</h1>
-      <div class="home-buttons">
-        <ul class=list-inline>
-          <li>
-            <%= link_to new_path do %>
-              <i class="fas fa-play-circle"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to score_path do %>
-              <i class="fas fa-trophy"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to story_path do %>
-              <i class="fas fa-cat"></i>
-            <% end %>
-          </li>
-        </ul>
-
-
-      </div>
-    </div>
-  </div>
-
-  <!-- <div class="container">
-    <div class="container">
-      <div class="board text-center">
-        <div>
-          <h1>High score Table</h1>
-        </div>
-      </div>
-    </div>
-    <div class="container story">
-      <div class="text-center story-content">
-        <h1>The story</h1>
-      </div>
-      <div class="text-center story-content">
-        <h1>The Objective</h1>
-      </div>
-    </div>
-  </div>
-  <footer class="flex-col mt-5 d-flex align-items-center justify-content-center">
-    <div class="content-container">
-      <p> Copyright &copy; 2021 Adventures in Codeland, Inc. All rights reserved</p>
-      <div class="social-media-container">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://github.com/pmkihara/adventures_in_codeland"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </footer> -->
