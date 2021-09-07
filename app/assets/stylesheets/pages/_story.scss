@@ -5,5 +5,28 @@ p {
 
 .story-text {
   overflow-y: scroll;
+}
 
+.story-text::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.0);
+}
+.story-text::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0.0);
+}
+.story-text::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba($color: white, $alpha: 0.7);
+}
+
+.close-story {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 36px;
+  a {
+    color: #0888D8;
+  }
+  a:hover {
+    color: #B40F0F;
+  }
 }
