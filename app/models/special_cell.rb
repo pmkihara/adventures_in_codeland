@@ -1,7 +1,7 @@
 class SpecialCell < ApplicationRecord
   belongs_to :play
   belongs_to :npc
-  has_one :next_cell, class_name: "SpecialCell", foreign_key: "special_cell_id"
+  has_one :next_cell, class_name: "SpecialCell", foreign_key: "special_cell_id", dependent: :destroy
 
   validates :cell_status,
             inclusion: { in: %w[blocked inactive_quest active_quest], message: "cell_status is not a valid status" }

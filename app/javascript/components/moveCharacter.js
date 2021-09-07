@@ -1,3 +1,5 @@
+import { csrfToken } from "@rails/ujs";
+
 const moveCharacter = (e) => {
 
   // ------------------------------ Map Settings -------------------------------
@@ -45,10 +47,22 @@ const moveCharacter = (e) => {
 
   // ------------------- Function: Display the dialogue boxes --------------------
   // ------------------------ when near an Inactive Cell -------------------------
+  const refreshInactiveBox = () => {
+    fetch(`${window.location.href}/robertao`, {
+      method: 'GET',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() }
+    })
+    .then(response => response.json())
+    .then((data) => {
+      const inactiveNpcParagraph = inactiveNpcBox.querySelector("p");
+      inactiveNpcParagraph.innerText = data.roberto_speech;
+    });
+  }
 
   const nearInactiveCell = (destinationCell) => {
     if (isAnyInactiveCellNear(destinationCell)) {
       inactiveNpcBox.classList.remove('hidden');
+      refreshInactiveBox();
     }
     else {
       inactiveNpcBox.classList.add('hidden');

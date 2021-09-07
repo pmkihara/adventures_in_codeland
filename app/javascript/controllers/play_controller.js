@@ -6,12 +6,11 @@ export default class extends Controller {
   static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer'];
 
   // ---------- Sets the dialogues depending on the status of the NPC ----------
+
   refreshBoxes(specialCells) {
     specialCells.forEach((specialCell) => {
       if (specialCell.cell_status === "active_quest") {
         this.speechActiveTarget.innerText = specialCell.question;
-      } else {
-        this.speechInactiveTarget.innerText = specialCell.random_speech;
       }
     });
   }
