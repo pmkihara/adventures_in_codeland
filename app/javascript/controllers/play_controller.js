@@ -74,7 +74,7 @@ export default class extends Controller {
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
-        }, 2000);
+        }, 5000);
       }
     });
   }

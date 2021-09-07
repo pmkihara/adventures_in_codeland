@@ -15,5 +15,7 @@ class Play < ApplicationRecord
     current_active&.next_cell&.update(cell_status: "active_quest")
   end
 
-  # deletar todas as outras play e criar uma nova/fazer uma validacao para so conseguir criar
+  def game_over?
+    lives.zero?
+  end
 end
