@@ -1,18 +1,17 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
-    <div class="home-title text-center">
+    <div class="form-title text-center">
       <h2>Sign up</h2>
     </div>
     <%= link_to 'X', root_path, class: 'x-back-home' %>
-
-    <div class="form-inputs">
+    <div class="form-inputs fonts">
       <div class="form-group d-flex", style="width: 100%">
-        <%= link_to 'Log in', new_path, class: 'login-button' %>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'login-button-disabled' %>
+        <%= link_to 'Log in', new_path, class: 'btn-form-secondary' %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn-form-secondary-disable' %>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-        <div class="form-inputs">
+        <div class="form-inputs fonts">
           <%= f.input :email,
                       required: true,
                       autofocus: true,
@@ -27,12 +26,11 @@
                         input_html: { autocomplete: "new-password" } %>
           </div>
         </div>
-
-        <div class="form-actions mb-4">
-          <%= f.button :submit, "Sign up", class: 'submit-button' %>
+        <div class="form-actions mb-4 fonts">
+          <%= f.button :submit, "Sign up", class: 'submit-button btn-form-main' %>
         </div>
       <% end %>
-<%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
