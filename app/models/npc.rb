@@ -6,7 +6,7 @@ class Npc < ApplicationRecord
   validates :name, presence: true
 
   def speak
-    RobertoBarros.quote
+    RobertoBarros.in_ingrish
   end
 
   def correct_answer?(answer)
