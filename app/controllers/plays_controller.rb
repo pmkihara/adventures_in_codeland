@@ -32,6 +32,7 @@ class PlaysController < ApplicationController
   end
 
   def validate_answer
+    skip_authorization
     active_cell = @play.cell_active
     return unless active_cell
 
@@ -44,10 +45,12 @@ class PlaysController < ApplicationController
   end
 
   def validate_name
+    skip_authorization
     current_user.name = params[:answer]
   end
 
   def validate_age
+    skip_authorization
     current_user.age = params[:answer]
   end
 
