@@ -7,3 +7,19 @@
     <%= render'map' %>
   </div>
 </div>
+
+<div class="final-score" data-play-target="finalScore">
+  <div class="score-container">
+    <h2>You did it!</h2>
+    <p>You have helped Ruby find his way home!</p>
+    <p>This is your final score:</p>
+    <div class="score-box">
+      <%= @play.score %>
+    </div>
+    <%= link_to plays_path do %>
+      <div class="btn-menu">
+      <p>BACK</p>
+      </div>
+    <% end %>
+  </div>
+</div>
