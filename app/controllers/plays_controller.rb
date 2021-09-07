@@ -6,28 +6,33 @@ class PlaysController < ApplicationController
 
   def new
     @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
+    authorize @play
     @play.user = current_user
     generate_cells(@play)
     redirect_to show_path(@play) if @play.save
   end
 
   def show
+    authorize @play
   end
 
   def plays
-    @plays = Play.where(user: current_user)
+    @plays = policy_scope(Play)
   end
 
   def save
+    authorize @play
     @play.update(play_params)
   end
 
   def destroy
+    authorize @play
     @play.destroy
     redirect_to saves_path
   end
 
   def validate_answer
+    skip_authorization
     active_cell = @play.cell_active
     return unless active_cell
 
@@ -40,14 +45,17 @@ class PlaysController < ApplicationController
   end
 
   def validate_name
+    skip_authorization
     current_user.name = params[:answer]
   end
 
   def validate_age
+    skip_authorization
     current_user.age = params[:answer]
   end
 
   def update_infos
+    skip_authorization
     respond_to do |format|
       format.json do
         render json: hashing_infos
