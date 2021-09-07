@@ -11,12 +11,13 @@
           <th class="name-column">NAME</th>
           <th class="score-column">SCORE</th>
         </tr>
-        <%  %>
-        <tr>
-          <td>1.</td>
-          <td>José Nascimento</td>
-          <td>1000</td>
-        </tr>
+        <% @plays.each.sort_by(:score).first(10) |play, index| do %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= play.user.name %></td>
+            <td><%= play.score %></td>
+          </tr>
+        <% end %>
         <tr>
           <td>2.</td>
           <td>José</td>
