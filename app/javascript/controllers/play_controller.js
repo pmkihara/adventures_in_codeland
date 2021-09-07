@@ -9,6 +9,8 @@ export default class extends Controller {
   refreshBoxes(specialCells) {
     specialCells.forEach((specialCell) => {
       if (specialCell.cell_status === "active_quest") {
+        const npcNameParagraph = this.boxDialogueNpcTarget.querySelector("p");
+        npcNameParagraph.innerText = specialCell.name_npc.charAt(0).toUpperCase() + specialCell.name_npc.slice(1);
         this.speechActiveTarget.innerText = specialCell.question;
       }
     });
@@ -39,9 +41,14 @@ export default class extends Controller {
   }
 
   // ---------- Check game ----------
-  checkGame(gameOver) {
+  checkGame(gameOver, score) {
     //tirar a hidden e colocar a final score
-    console.log(this.finalScoreTarget);
+    if (gameOver) {
+      const scoreInput = this.finalScoreTarget.querySelector('.score-number');
+      scoreInput.innerText = score;
+      this.finalScoreTarget.classList.add('final-score');
+      this.finalScoreTarget.classList.remove('hidden');
+    }
   }
 
   // ---------- Request new info's for refresh play ----------
@@ -55,7 +62,7 @@ export default class extends Controller {
       // this.positionPlayer(data.user_position_x, data.user_position_y);
       this.positionNpcs(data.special_cells);
       this.refreshBoxes(data.special_cells);
-      // this.checkGame(data.game_over);
+      this.checkGame(data.game_over, data.score);
     });
   }
 
@@ -82,7 +89,7 @@ export default class extends Controller {
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
-        }, 5000);
+        }, 3000);
       }
     });
   }

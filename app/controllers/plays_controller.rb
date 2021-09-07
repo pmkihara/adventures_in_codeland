@@ -8,7 +8,7 @@ class PlaysController < ApplicationController
 
   def new
     Play.where(user: current_user).destroy_all if current_user.has_a_play?
-    @play = Play.new(score: 100, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20, lives: 3)
+    @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20)
     authorize @play
     @play.user = current_user
     generate_cells(@play)
@@ -86,6 +86,6 @@ class PlaysController < ApplicationController
   end
 
   def play_params
-    params.require(:play).permit(:score, :user_position_x, :user_position_y, :lives)
+    params.require(:play).permit(:score, :user_position_x, :user_position_y)
   end
 end
