@@ -1,11 +1,3 @@
-// Div with the map crop - doesn't move
-.map-view {
-  width: calc(17 * var(--grid-cell));
-  height: calc(11 * var(--grid-cell));
-  overflow: hidden;
-  margin: 0 auto;
-}
-
 // Div with both the map and the layer over the map
 .map-layer {
   position: relative;

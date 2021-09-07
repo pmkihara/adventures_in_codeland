@@ -2,11 +2,19 @@ body {
   overflow: hidden;
 }
 
+// Div with the map crop - doesn't move
+.play-window-view {
+  width: calc(17 * var(--grid-cell));
+  height: calc(11 * var(--grid-cell));
+  overflow: hidden;
+  position: relative;
+}
+
 // Sets the position of the layers
 
 .menu-group {
   z-index: 5;
-  position: relative;
+  position: absolute;
   top: 15px;
   right: 15px;
 }
