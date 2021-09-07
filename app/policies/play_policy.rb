@@ -1,7 +1,7 @@
 class PlayPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
@@ -10,10 +10,6 @@ class PlayPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
-  end
-
-  def plays?
     record.user == user
   end
 

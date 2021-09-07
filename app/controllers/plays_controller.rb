@@ -17,8 +17,7 @@ class PlaysController < ApplicationController
   end
 
   def plays
-    authorize @plays
-    @plays = Play.where(user: current_user)
+    @plays = policy_scope(Play)
   end
 
   def save
@@ -53,6 +52,7 @@ class PlaysController < ApplicationController
   end
 
   def update_infos
+    skip_authorization
     respond_to do |format|
       format.json do
         render json: hashing_infos
