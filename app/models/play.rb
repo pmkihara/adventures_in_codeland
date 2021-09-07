@@ -16,6 +16,11 @@ class Play < ApplicationRecord
   end
 
   def game_over?
-    lives.zero?
+    @lives.zero?
+  end
+
+  def punishing
+    @score -= 10
+    @lives -= 1
   end
 end
