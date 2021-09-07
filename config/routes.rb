@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   post '/play/:id/validate_answer', to: 'plays#validate_answer', as: 'validate_answer'
   post '/play/:id/validate_name', to: 'plays#validate_name', as: 'validate_name'
   post '/play/:id/validate_age', to: 'plays#validate_age', as: 'validate_age'
+
+  # rotas api
   get '/play/:id/update_infos', to: 'plays#update_infos', as: 'update_infos'
+  get '/play/:id/robertao', to: 'plays#random_roberto_speech'
 end
