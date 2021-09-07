@@ -1,0 +1,28 @@
+.btn-menu {
+  border: 0;
+  padding: 8px 16px;
+  background-color: #0888D8;
+  box-shadow: 3px 0 0 black,
+              -3px 0 0 black,
+              0 3px 0 black,
+              0 -3px 0 black,
+              inset 0 -3px 0 rgba(0, 0, 0, 0.2),
+              inset -3px 0 0 rgba(0, 0, 0, 0.2);
+  font-family: $pixel-title-font;
+  font-size: 16px;
+  color: white;
+  line-height: 1em;
+  &:hover {
+    background-color: #B40F0F;
+    box-shadow: 3px 0 0 black,
+                -3px 0 0 black,
+                0 3px 0 black,
+                0 -3px 0 black,
+                inset 0 3px 0 rgba(0, 0, 0, 0.2),
+                inset 3px 0 0 rgba(0, 0, 0, 0.2);
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+}

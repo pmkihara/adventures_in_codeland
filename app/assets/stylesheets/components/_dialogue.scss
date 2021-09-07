@@ -11,8 +11,8 @@
 
 .dialogue-layer {
   position: absolute;
-  z-index: 3;
   height: 100%;
+  width: 100%;
 }
 
 // --------------------------------- NPC box -----------------------------------
@@ -77,6 +77,7 @@
   color: white;
   padding: 20px;
   bottom: 0px;
+  width: 100%;
   form {
     position: relative;
   }
@@ -96,7 +97,6 @@
 .answer-submit {
   position: absolute;
   border: 0;
-  z-index: 2;
   height: 100vh;
   width: 100vw;
 }
