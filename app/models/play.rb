@@ -19,6 +19,6 @@ class Play < ApplicationRecord
 
     end_time = Time.now.to_i
     new_score = (1_000_000 / (end_time - start_time))
-    Play.update(score: new_score, end_time: end_time)
+    update(score: new_score, end_time: end_time)
   end
 end
