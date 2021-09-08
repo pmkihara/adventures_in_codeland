@@ -162,3 +162,16 @@
     color: white;
   }
 }
+
+.btn-pixel-45w-disable {
+  background-color: #B40F0F;
+  box-shadow: 6px 0 0 black,
+              -6px 0 0 black,
+              0 6px 0 black,
+              0 -6px 0 black,
+              inset 0 6px 0 rgba(0, 0, 0, 0.2),
+              inset 6px 0 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: white;
+  transform: translate(0px, 4px);
+}
