@@ -10,8 +10,8 @@
   width: calc(50 * var(--grid-cell));
   height: calc(46 * var(--grid-cell));
   background-size: calc(50 * var(--grid-cell)) calc(46 * var(--grid-cell)) !important;
-  background-color: rgba(0,0,0,0);
-  background-image: url('/map/map_base.png');
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("/map/map_base.png");
   table {
     margin: 0;
     padding: 0;
@@ -34,10 +34,6 @@
   height: calc(46 * var(--grid-cell));
   position: absolute;
   left: -128px;
-  background-image: url('/map/map_overlay.png');
+  background-image: url("/map/map_overlay.png");
   background-size: calc(60 * var(--grid-cell)) calc(46 * var(--grid-cell)) !important;
-}
-
-.blocked {
-  background-color: rgba($color: red, $alpha: 0.3);
 }

@@ -16,7 +16,7 @@ module GenerateCells
     npc_factory(
       name: "rafa",
       question: "boa tarde!",
-      resolution: "boa!",
+      resolution: "puts",
       tip1: "Só as 3 primeiras letras :)"
     )
   end
@@ -51,6 +51,15 @@ module GenerateCells
     )
   end
 
+  def generate_npc_welcome
+    npc_factory(
+      name: "ruby",
+      question: "blablabla",
+      resolution: 'puts "Hello World"',
+      tip1: "Use aspas duplas"
+    )
+  end
+
   def generate_cells(play)
     roberto = SpecialCell.create(
       play: play,
@@ -75,13 +84,21 @@ module GenerateCells
       position_y: 35,
       next_cell: ed
     )
-    SpecialCell.create(
+    rafa = SpecialCell.create(
       play: play,
       npc: generate_npc_rafa,
-      cell_status: "active_quest",
+      cell_status: "inactive_quest",
       position_x: 21,
       position_y: 17,
       next_cell: neto
+    )
+    SpecialCell.create(
+      play: play,
+      npc: generate_npc_welcome,
+      cell_status: "active_quest",
+      position_x: 11,
+      position_y: 19,
+      next_cell: rafa
     )
   end
 end
