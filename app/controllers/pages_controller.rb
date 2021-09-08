@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   end
 
   def score
-    @plays = Play.all
+    @plays = Play.where("end_time IS NOT NULL").order("score DESC")
   end
 end

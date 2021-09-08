@@ -20,7 +20,7 @@ class PlaysController < ApplicationController
 
   def plays
     @plays = policy_scope(Play)
-    @play = @plays.last
+    @play = @plays.last if @plays
   end
 
   def save
