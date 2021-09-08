@@ -1,7 +1,7 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
     <div class="home-title">
-      <h1>Welcome<%= ", #{@play.user.name}" if @play %>!</h1>
+      <h1>Welcome <%= current_user.name if current_user %>!</h1>
     </div>
     <div class="home-button-container">
       <% if @play %>
