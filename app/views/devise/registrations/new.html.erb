@@ -1,13 +1,10 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
-    <div class="form-title text-center">
-      <h2>Sign up</h2>
-    </div>
-    <%= link_to 'X', root_path, class: 'x-back-home' %>
-    <div class="form-inputs fonts">
-      <div class="form-group d-flex", style="width: 100%">
-        <%= link_to 'Log in', new_path, class: 'btn-form-secondary' %>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn-form-secondary-disable' %>
+    <%= link_to '✖', root_path, class: 'x-back-home' %>
+    <div class="form-inputs fonts", style="width: 80%">
+      <div class="form-group d-flex form-head-buttons">
+        <%= link_to 'Log in', new_path, class: 'btn-pixel-45w' %>
+        <%= link_to 'Sign up', "#", class: 'btn-pixel-45w btn-pixel-45w-disable' %>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -16,7 +13,7 @@
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
-          <div class="form-inputs d-flex mb-3">
+          <div class="form-inputs mb-3 form-two-inline">
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -26,8 +23,8 @@
                         input_html: { autocomplete: "new-password" } %>
           </div>
         </div>
-        <div class="form-actions mb-4 fonts">
-          <%= f.button :submit, "Sign up", class: 'submit-button btn-form-main' %>
+        <div class="form-actions fonts">
+          <%= f.button :submit, "Sign up", class: 'btn-pixel-full-width mb-5' %>
         </div>
       <% end %>
       <%= render "devise/shared/links" %>

@@ -1,13 +1,10 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
-    <div class="form-title text-center">
-      <h2>Welcome, Adventurer!</h1>
-    </div>
-    <%= link_to 'X', root_path, class: 'x-back-home' %>
-    <div class="form-inputs", style="width: 424px">
-      <div class="form-group d-flex fonts">
-        <%= link_to 'Log in', new_path, class: 'btn-form-secondary-disable'%>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn-form-secondary' %>
+    <%= link_to '✖', root_path, class: 'x-back-home' %>
+    <div class="form-inputs", style="width: 80%">
+      <div class="form-group d-flex fonts form-head-buttons">
+        <%= link_to 'Log in', '#', class: 'btn-pixel-45w btn-pixel-45w-disable'%>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn-pixel-45w' %>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs fonts">
@@ -21,10 +18,12 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
         <div class="form-actions fonts">
-          <%= f.button :submit, "Log in", class: 'btn-form-main' %>
+          <%= f.button :submit, "Log in", class: 'btn-pixel-full-width mb-5' %>
         </div>
       <% end %>
-      <%= render "devise/shared/links" %>
+      <div class="text-center">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

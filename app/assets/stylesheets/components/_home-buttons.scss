@@ -114,6 +114,11 @@
               inset -6px 0 0 rgba(0, 0, 0, 0.2);
   width: 100%;
   text-align: center;
+  font-family: $pixel-title-font;
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
   &:hover {
     background-color: #B40F0F;
     box-shadow: 6px 0 0 black,
@@ -124,15 +129,6 @@
                 inset 6px 0 0 rgba(0, 0, 0, 0.2);
     text-decoration: none;
     transform: translate(0px, 4px);
-  }
-  p {
-    font-family: $pixel-title-font;
-    font-size: 30px;
-    color: white;
-    margin: 0;
-  }
-  p:hover {
-    text-decoration: none;
     color: white;
   }
 }
@@ -149,6 +145,10 @@
   min-width: 230px;
   text-align: center;
   text-transform: uppercase;
+  font-family: $pixel-title-font;
+  font-size: 18px;
+  color: white;
+  margin: 0;
   &:hover {
     background-color: #B40F0F;
     box-shadow: 6px 0 0 black,
@@ -159,15 +159,19 @@
                 inset 6px 0 0 rgba(0, 0, 0, 0.2);
     text-decoration: none;
     transform: translate(0px, 4px);
-  }
-  p {
-    font-family: $pixel-title-font;
-    font-size: 18px;
-    color: white;
-    margin: 0;
-  }
-  p:hover {
-    text-decoration: none;
     color: white;
   }
+}
+
+.btn-pixel-45w-disable {
+  background-color: #B40F0F;
+  box-shadow: 6px 0 0 black,
+              -6px 0 0 black,
+              0 6px 0 black,
+              0 -6px 0 black,
+              inset 0 6px 0 rgba(0, 0, 0, 0.2),
+              inset 6px 0 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: white;
+  transform: translate(0px, 4px);
 }

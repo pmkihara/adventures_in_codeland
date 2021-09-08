@@ -1,7 +1,12 @@
-<div class="menu-group">
-  <%= link_to plays_path do %>
-    <div class="btn-menu">
-    <p>BACK</p>
+<ul class="menu-group">
+  <li class="pb-1">
+    <div class="btn-menu btn-menu-down" data-toggle="dropdown">
+      <i class="fas fa-caret-down"></i>
     </div>
-  <% end %>
-</div>
+    <div class="dropdown-menu dropdown-menu-right background-menu" >
+      <%= link_to "Back", plays_path, class: "dropdown-item btn-menu mb-2" %>
+      <%= link_to "Help", "#", class: "dropdown-item btn-menu mb-2" %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item btn-menu" %>
+    </div>
+  </li>
+</ul>

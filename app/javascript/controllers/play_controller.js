@@ -3,18 +3,30 @@ import { csrfToken } from "@rails/ujs";
 
 
 export default class extends Controller {
-  static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer'];
+  static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer', 'finalScore'];
 
   // ---------- Sets the dialogues depending on the status of the NPC ----------
-
   refreshBoxes(specialCells) {
     specialCells.forEach((specialCell) => {
       if (specialCell.cell_status === "active_quest") {
+        const npcNameParagraph = this.boxDialogueNpcTarget.querySelector("p");
+        npcNameParagraph.innerText = specialCell.name_npc.charAt(0).toUpperCase() + specialCell.name_npc.slice(1);
         this.speechActiveTarget.innerText = specialCell.question;
       }
     });
   }
 
+  setExclamationMark() {
+    const activeQuestCell = document.querySelector('.active_quest');
+    const table = document.querySelector('table');
+    const upperCell = table.rows[activeQuestCell.parentElement.rowIndex - 1].cells[activeQuestCell.cellIndex];
+    const previousExclamationMark = document.querySelector('.exclamation_mark');
+
+    if (previousExclamationMark) previousExclamationMark.classList.remove('exclamation_mark');
+    if (activeQuestCell) upperCell.classList.add('exclamation_mark');
+  }
+
+  // ---------- Set position player in map ----------
   positionPlayer(positionX, positionY) {
     const row = document.getElementById(`tr-${positionX}`);
     const columnsOfRow = row.querySelectorAll('td');
@@ -24,6 +36,7 @@ export default class extends Controller {
     column.classList.add('character')
   }
 
+  // ---------- Set position npcs in map ----------
   positionNpcs(specialCells) {
     specialCells.forEach((specialCell) => {
       const row = document.getElementById(`tr-${specialCell.position_x}`);
@@ -34,9 +47,31 @@ export default class extends Controller {
       column.classList.add(`npc-${specialCell.name_npc}`)
       column.classList.add(`${specialCell.cell_status}`)
       column.classList.add("blocked")
+
     });
   }
 
+  // ---------- Check game ----------
+  checkGame(gameOver, score) {
+    //tirar a hidden e colocar a final score
+    if (gameOver) {
+      const scoreInput = this.finalScoreTarget.querySelector('.score-number');
+      scoreInput.innerText = score;
+      this.finalScoreTarget.classList.add('final-score');
+      this.finalScoreTarget.classList.remove('hidden');
+    }
+  }
+
+  // ---------- Hides the game over box when the button is clicked ----------
+  hideFinalScore(event) {
+    event.preventDefault();
+
+    this.finalScoreTarget.classList.remove('final-score');
+    this.finalScoreTarget.classList.add('hidden');
+  }
+
+
+  // ---------- Request new info's for refresh play ----------
   updateInfos() {
     fetch(`${window.location.href}/update_infos`, {
       method: 'GET',
@@ -47,11 +82,13 @@ export default class extends Controller {
       // this.positionPlayer(data.user_position_x, data.user_position_y);
       this.positionNpcs(data.special_cells);
       this.refreshBoxes(data.special_cells);
+      this.checkGame(data.game_over, data.score);
+      this.setExclamationMark();
     });
   }
 
   connect() {
-    // ---------------------- Place the Player when loading -----------------------
+    // ---------------------- Load game -----------------------
     this.updateInfos();
   }
 
@@ -73,26 +110,26 @@ export default class extends Controller {
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
-        }, 5000);
+        }, 3000);
       }
     });
   }
 
-  validateName(event) {
-    event.preventDefault();
+  // validateName(event) {
+  //   event.preventDefault();
 
-    fetch(this.formTarget.action, {
-      method: 'POST',
-      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
-    })
-    .then(response => response.json())
-    .then((data) => {
-      this.speechActiveTarget.innerText = data.message
-      this.formTarget.reset()
-    });
-    this.refreshBoxes();
-  }
+  //   fetch(this.formTarget.action, {
+  //     method: 'POST',
+  //     headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+  //     body: new FormData(this.formTarget)
+  //   })
+  //   .then(response => response.json())
+  //   .then((data) => {
+  //     this.speechActiveTarget.innerText = data.message
+  //     this.formTarget.reset()
+  //   });
+  //   this.refreshBoxes();
+  // }
 
   validateAge(event) {
     event.preventDefault();

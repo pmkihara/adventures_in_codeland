@@ -1,0 +1,36 @@
+/* ------------------------------ NPC settings ------------------------------ */
+
+// Exclamation mark - appear in the cell on top of the active_quest
+.exclamation_mark {
+  background-image: url("/gui/exclamation_mark.png");
+  image-rendering: pixelated;
+  background-size: var(--grid-cell);
+  background-position: 4px 6px;
+  background-repeat: no-repeat;
+}
+
+// Settings common to all NPCS
+.npc-ed, .npc-neto, .npc-rafa, .npc-roberto {
+  image-rendering: pixelated;
+  background-size: 100%;
+  width: 10px;
+  height: 10px;
+}
+
+// Settings specific to one NPC
+
+.npc-rafa {
+  background-image: url("/sprites/npc_rafa.png");
+}
+
+.npc-neto {
+  background-image: url("/sprites/npc_neto.png");
+}
+
+.npc-ed {
+  background-image: url("/sprites/npc_ed.png");
+}
+
+.npc-roberto {
+  background-image: url("/sprites/npc_roberto.png");
+}
