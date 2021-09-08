@@ -25,6 +25,6 @@ $border-radius-sm: 2px;
 // Override other variables below!
 
 .dropdown-item:hover {
-  color: white;
+  color: white !important;
   text-decoration: none;
 }
