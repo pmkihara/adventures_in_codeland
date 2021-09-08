@@ -1,17 +1,17 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
     <div class="home-title">
-      <h1>Welcome<%= ", #{@play.user.name}" if @play.user.name %>!</h1>
+      <h1>Welcome!</h1>
     </div>
     <div class="home-button-container">
       <% if current_user.plays %>
-        <%= link_to 'Continue Adventure', show_path(@play), class: "btn-pixel-full-width mb-5" %>
+        <%= link_to 'Continue Adventure', show_path(@play), class: "mb-4 btn-pixel-full-width" %>
       <% end %>
-      <%= link_to 'Reset Adventure', new_path, class: "btn-pixel-full-width", data: {confirm: 'Your previous Adventure will be reset. Are you sure?'} %>
+      <%= link_to 'New Adventure', new_path, class: "mb-4 btn-pixel-full-width", data: {confirm: 'Your previous Adventure will be reset. Are you sure?'} %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn-pixel-full-width", data: {confirm: 'Your previous Adventure will be reset. Are you sure?'} %>
+
     </div>
-    <div class="close-story">
-        <%= link_to '✖', root_path, class: 'x-back-home' %>
-    </div>
+    <%= link_to '✖', root_path, class: 'x-back-home' %>
   </div>
 </div>
 </div>
