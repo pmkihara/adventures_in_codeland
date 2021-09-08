@@ -5,14 +5,14 @@
 }
 
 .score-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
   font-size: 20px;
   font-family: $pixel-title-font;
   color: rgb(4, 163, 211);
   height: 300px;
-  width: 660px;
+  width: 90%;
   overflow: auto;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
@@ -24,11 +24,19 @@
 .score-table {
   height: 400px;
   width: 100%;
-  table-layout: auto;
+  table-layout: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .rank-column {
   width: 20%;
+}
+
+.name-column {
+  width: 60%;
 }
 
 .score-column {
