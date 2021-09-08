@@ -7,7 +7,6 @@ class PlaysController < ApplicationController
   include HashingInfos
 
   def new
-    Play.where(user: current_user).destroy_all if current_user.has_a_play?
     @play = Play.new(score: 0, start_time: Time.now.to_i, user_position_x: 12, user_position_y: 20)
     authorize @play
     @play.user = current_user
