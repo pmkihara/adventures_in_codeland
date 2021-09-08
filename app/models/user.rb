@@ -5,7 +5,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def has_a_play?
-    true if plays
-  end
+  validates :name, presence: true
 end
