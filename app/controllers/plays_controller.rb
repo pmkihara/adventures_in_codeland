@@ -21,6 +21,7 @@ class PlaysController < ApplicationController
 
   def plays
     @plays = policy_scope(Play)
+    @play = @plays.last
   end
 
   def save
