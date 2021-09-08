@@ -26,7 +26,7 @@ body {
   justify-content: center;
 }
 
-.score-container {
+.final-score-container {
   max-width: 800px;
   margin: 20px;
   text-align: center;
@@ -50,31 +50,17 @@ body {
   a:hover {
     text-decoration: none;
   }
-  .x-back-home {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font: 20px monospace;
-  padding: 0 5px;
-  opacity: 0.5;
-  display: block;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  border: 2px solid black;
-  border-radius: 50%;
-  }
-  .x-back-home:hover {
-  text-decoration: none;
-  color: black;
-  opacity: 1;
-  }
   .score-number {
   margin-bottom: 0;
   color: rgb(255, 196, 0);
   background-color: black;
   padding: 10px;
   }
+}
+.final-score-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
 }
 
 

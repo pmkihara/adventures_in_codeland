@@ -1,5 +1,8 @@
 <div class="hidden" data-play-target="finalScore">
-  <div class="score-container">
+  <div class="final-score-container">
+    <div data-action = "click->play#hideFinalScore">
+      <%= link_to '✖', "#", class: 'x-back-home final-score-close' %>
+    </div>
     <h2>You did it!</h2>
     <p>You have helped Ruby find their way home!</p>
     <p>This is your final score:</p>
@@ -9,8 +12,5 @@
       <p>TO LEADERBOARD</p>
       </div>
     <% end %>
-    <div data-action = "click->play#hideFinalScore">
-      <%= link_to '✖', "#", class: 'x-back-home' %>
-    </div>
   </div>
 </div>

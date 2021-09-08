@@ -1,7 +1,7 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
     <div class="home-title text-center">
-      <h2>High Score Table</h2>
+      <h1>Leaderboard</h2>
     </div>
     <%= link_to '✖', root_path, class: 'x-back-home' %>
     <div class="score-container">
@@ -13,9 +13,9 @@
         </tr>
         <% @plays.each_with_index do |play, index| %>
           <tr>
-              <td><%= index + 1 %></td>
-              <td><%= play.user.name %></td>
-              <td><%= play.score %></td>
+            <td><%= index + 1 %></td>
+            <td><%= play.user.name %></td>
+            <td><%= play.score %></td>
           </tr>
         <% end %>
       </table>
