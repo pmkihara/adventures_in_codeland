@@ -3,26 +3,28 @@
   color: white;
   font-weight: bold;
   font-size: 24px;
-  width: 32px;
-  height: 32px;
-  text-align: center;
+  width: 31px;
+  height: 31px;
+  line-height: 1.35em;
+  text-align: left;
+  padding-left: 5px;
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #0888D8;
+  background-color: $game-blue;
   border-radius: 50%;
 }
 .x-back-home:hover {
   text-decoration: none;
   color: white;
-  background-color: #B40F0F;
+  background-color: $game-red;
 }
 
 // --------------------- Buttons with pixel art simulation ---------------------
 
 .btn-pixel-full-width {
   padding: 10px 16px 6px;
-  background-color: #0888D8;
+  background-color: $game-blue;
   box-shadow: 6px 0 0 black,
               -6px 0 0 black,
               0 6px 0 black,
@@ -37,7 +39,7 @@
   margin: 0;
   text-transform: uppercase;
   &:hover {
-    background-color: #B40F0F;
+    background-color: $game-red;
     box-shadow: 6px 0 0 black,
                 -6px 0 0 black,
                 0 6px 0 black,
@@ -51,7 +53,7 @@
 }
 .btn-pixel-45w {
   padding: 8px 16px 4px;
-  background-color: #0888D8;
+  background-color: $game-blue;
   box-shadow: 6px 0 0 black,
               -6px 0 0 black,
               0 6px 0 black,
@@ -67,7 +69,7 @@
   color: white;
   margin: 0;
   &:hover {
-    background-color: #B40F0F;
+    background-color: $game-red;
     box-shadow: 6px 0 0 black,
                 -6px 0 0 black,
                 0 6px 0 black,
@@ -81,7 +83,7 @@
 }
 
 .btn-pixel-45w-disable {
-  background-color: #B40F0F;
+  background-color: $game-red;
   box-shadow: 6px 0 0 black,
               -6px 0 0 black,
               0 6px 0 black,

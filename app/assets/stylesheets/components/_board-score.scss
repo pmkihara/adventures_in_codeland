@@ -1,44 +1,42 @@
-.board {
-  font-size: 50px;
-  text-align: center;
-  margin: 300px;
-}
-
 .score-container {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
   font-size: 20px;
   font-family: $pixel-title-font;
-  color: rgb(4, 163, 211);
+  color: black;
   height: 300px;
   width: 90%;
-  overflow: auto;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5) ;
-  border-radius: 8px;
-  border: 4px solid black;
+  overflow-y: scroll;
+  padding-left: 10px;
+}
+
+.score-container::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.0);
+}
+.score-container::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0.0);
+}
+.score-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba($color: white, $alpha: 0.7);
 }
 
 .score-table {
-  height: 400px;
   width: 100%;
   table-layout: fixed;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
-}
-
-.rank-column {
-  width: 20%;
-}
-
-.name-column {
-  width: 60%;
-}
-
-.score-column {
-  width: 20%;
+  td, th {
+  padding: 0.2rem;
+  text-align: center;
+  }
+  th.name-column {
+    width: 100vw;
+  }
+  th {
+    color: $game-red;
+  }
+  tr:hover {
+    background-color: rgba($color: #ffffff, $alpha: 0.6);
+  }
 }
