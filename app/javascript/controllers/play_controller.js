@@ -16,6 +16,16 @@ export default class extends Controller {
     });
   }
 
+  setExclamationMark() {
+    const activeQuestCell = document.querySelector('.active_quest');
+    const table = document.querySelector('table');
+    const upperCell = table.rows[activeQuestCell.parentElement.rowIndex - 1].cells[activeQuestCell.cellIndex];
+    const previousExclamationMark = document.querySelector('.exclamation_mark');
+
+    if (previousExclamationMark) previousExclamationMark.classList.remove('exclamation_mark');
+    if (activeQuestCell) upperCell.classList.add('exclamation_mark');
+  }
+
   // ---------- Set position player in map ----------
   positionPlayer(positionX, positionY) {
     const row = document.getElementById(`tr-${positionX}`);
@@ -37,6 +47,7 @@ export default class extends Controller {
       column.classList.add(`npc-${specialCell.name_npc}`)
       column.classList.add(`${specialCell.cell_status}`)
       column.classList.add("blocked")
+
     });
   }
 
@@ -51,6 +62,15 @@ export default class extends Controller {
     }
   }
 
+  // ---------- Hides the game over box when the button is clicked ----------
+  hideFinalScore(event) {
+    event.preventDefault();
+
+    this.finalScoreTarget.classList.remove('final-score');
+    this.finalScoreTarget.classList.add('hidden');
+  }
+
+
   // ---------- Request new info's for refresh play ----------
   updateInfos() {
     fetch(`${window.location.href}/update_infos`, {
@@ -63,6 +83,7 @@ export default class extends Controller {
       this.positionNpcs(data.special_cells);
       this.refreshBoxes(data.special_cells);
       this.checkGame(data.game_over, data.score);
+      this.setExclamationMark();
     });
   }
 
@@ -94,21 +115,21 @@ export default class extends Controller {
     });
   }
 
-  validateName(event) {
-    event.preventDefault();
+  // validateName(event) {
+  //   event.preventDefault();
 
-    fetch(this.formTarget.action, {
-      method: 'POST',
-      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
-    })
-    .then(response => response.json())
-    .then((data) => {
-      this.speechActiveTarget.innerText = data.message
-      this.formTarget.reset()
-    });
-    this.refreshBoxes();
-  }
+  //   fetch(this.formTarget.action, {
+  //     method: 'POST',
+  //     headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+  //     body: new FormData(this.formTarget)
+  //   })
+  //   .then(response => response.json())
+  //   .then((data) => {
+  //     this.speechActiveTarget.innerText = data.message
+  //     this.formTarget.reset()
+  //   });
+  //   this.refreshBoxes();
+  // }
 
   validateAge(event) {
     event.preventDefault();
