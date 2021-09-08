@@ -70,8 +70,13 @@ body {
   top: 15px;
   right: 15px;
   cursor: pointer;
+  list-style-type: none;
   a:hover {
     text-decoration: none;
+  }
+  span {
+    vertical-align: middle;
+    margin: 0;
   }
 }
 
