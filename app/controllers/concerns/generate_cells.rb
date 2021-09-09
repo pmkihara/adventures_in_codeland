@@ -56,19 +56,29 @@ module GenerateCells
   def generate_npc_mari
     npc_factory(
       name: "mari",
-      question: 'ruby = "RUBY THE CAT"<br>Oh no! Ruby is too big to pass through this door! They need to get smaller!',
-      resolution: "is_a_cat.class",
+      question: 'ruby = "RUBY THE CAT"<br><br>Oh no! Ruby is too big to pass through this door! You can use the method #downcase on the [ruby] variable to make it smaller (it should become like this: "ruby the cat").',
+      resolution: "ruby.downcase",
       tip1: "<br>You can call methods on variables by typing a dot (.) between the name of the variable and the method.<br>",
       tip2: "<br>This is how you can call a method on a variable: variable.method.<br>"
+    )
+  end
+
+  def generate_npc_nic
+    npc_factory(
+      name: "nic",
+      question: 'I am already tired of turning around, but I got stuck in an infinite loop! Can you change the third line of the code below?<br><br>while tired == false<br>&nbsp;&nbsp;turn around<br>&nbsp;&nbsp;tired = false<br>end',
+      resolution: "tired = true",
+      tip1: "<br>A loop is a way to repeat an action without having to write it again. However, an infinite loop is like being stuck inside a car circuit without a brake.<br>",
+      tip2: "<br>The while loop keeps running as long as the condition set in the first line is not satisfied. You will need to change it in order to leave the loop.<br>"
     )
   end
 
   def generate_npc_roberto
     npc_factory(
       name: "roberto",
-      question: "I need to print how many tickets I have solved for Batch #690 of Le Wagon! The only thing I know that it is 5 times the amount of people in this map. Can you help me?<br>It is also possible to perform math operations just like using a calculator:<br> sum (+), difference (-), product (*), quotient (/) ",
-      resolution: "puts 5 * 4",
-      tip1: "<br>I think there are 4 teachers on the map ;)<br>",
+      question: "I need to print how many tickets I have solved for Batch #690 of Le Wagon! The only thing I know that it is 7 times the amount of people in this map. Can you help me?<br>It is also possible to perform math operations just like using a calculator:<br> sum (+), difference (-), product (*), quotient (/) ",
+      resolution: "puts 7 * 7",
+      tip1: "<br>I think there are 7 people here ;)<br>",
       tip2: '<br>Do not forget to use "puts" to print the result!<br>',
       tip3: "<br>You might want to use the asterisk('*') to do the operation.<br>"
     )
@@ -82,13 +92,29 @@ module GenerateCells
       position_x: 21,
       position_y: 17
     )
+    nic = SpecialCell.create(
+      play: play,
+      npc: generate_npc_nic,
+      cell_status: "inactive_quest",
+      position_x: 30,
+      position_y: 19,
+      next_cell: roberto
+    )
+    mari = SpecialCell.create(
+      play: play,
+      npc: generate_npc_mari,
+      cell_status: "inactive_quest",
+      position_x: 9,
+      position_y: 25,
+      next_cell: nic
+    )
     ed = SpecialCell.create(
       play: play,
       npc: generate_npc_ed,
       cell_status: "inactive_quest",
       position_x: 35,
       position_y: 11,
-      next_cell: roberto
+      next_cell: mari
     )
     neto = SpecialCell.create(
       play: play,
