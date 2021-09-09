@@ -1,11 +1,11 @@
-p {
-  font-family: $pixel-title-font;
-  font-size: 24px;
-}
-
 .story-text {
   overflow-y: scroll;
   padding-left: 10px;
+}
+
+.story-text > p {
+  font-family: $pixel-title-font;
+  font-size: 24px;
 }
 
 .story-text::-webkit-scrollbar-track {
