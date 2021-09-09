@@ -75,8 +75,8 @@ module GenerateCells
     npc_factory(
       name: "roberto",
       question: "I need to print how many tickets I have solved for Batch #690 of Le Wagon! The only thing I know that it is 5 times the amount of teachers in this map. Can you help me?<br>It is also possible to perform math operations just like using a calculator:<br> sum (+), difference (-), product (*), quotient (/) ",
-      resolution: "puts 5 * #{@play.specials_cells.length}",
-      tip1: "I think there are #{@play.specials_cells.length} teachers on the map ;)",
+      resolution: "puts 5 * #{@play.special_cells.length - 4}",
+      tip1: "I think there are #{@play.special_cells.length - 4} teachers on the map ;)",
       tip2: 'Do not forget to use "puts" to print the result!'
     )
   end
