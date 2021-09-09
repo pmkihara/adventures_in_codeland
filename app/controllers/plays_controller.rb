@@ -45,7 +45,7 @@ class PlaysController < ApplicationController
       @play.check_if_game_over
       render json: { message: random_phrase_correct(@play), correct: true }
     else
-      render json: { message: random_phrase_incorrect_and_tip(@play), correct: false }
+      render json: { message: "#{random_phrase_incorrect_and_tip(@play)} #{active_cell.npc.question}", correct: false }
     end
   end
 
