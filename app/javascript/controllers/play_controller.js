@@ -10,12 +10,13 @@ export default class extends Controller {
     specialCells.forEach((specialCell) => {
       if (specialCell.cell_status === "active_quest") {
         const npcNameParagraph = this.boxDialogueNpcTarget.querySelector("p");
-        npcNameParagraph.innerText = specialCell.name_npc.charAt(0).toUpperCase() + specialCell.name_npc.slice(1);
-        this.speechActiveTarget.innerText = specialCell.question;
+        npcNameParagraph.innerHTML = specialCell.name_npc.charAt(0).toUpperCase() + specialCell.name_npc.slice(1);
+        this.speechActiveTarget.innerHTML = specialCell.question;
       }
     });
   }
 
+  // ------- Sets the exclamation mark in the cell above the active NPC --------
   setExclamationMark() {
     const activeQuestCell = document.querySelector('.active_quest');
     const table = document.querySelector('table');
