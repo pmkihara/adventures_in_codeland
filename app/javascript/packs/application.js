@@ -28,6 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import { moveCharacter } from '../components/moveCharacter';
 import { enter } from '../components/enter';
+import { backgroundAudio } from '../components/audio';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -35,21 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   enter();
 
   if (document.getElementById("background_audio")) {
-    const sound = document.getElementById("background_audio")
-
-    document.getElementById("toggle-sound-on").addEventListener("click", (event) => {
-      sound.volume = 0.2;
-      sound.play();
-    })
-
-    document.getElementById("toggle-sound-off").addEventListener("click", (event) => {
-      sound.pause();
-    })
-
-    document.getElementById("start-audio").addEventListener("click", (event) => {
-      sound.volume = 0.2;
-      sound.play();
-    })
+    backgroundAudio();
   }
 });
 document.addEventListener('keydown', moveCharacter);

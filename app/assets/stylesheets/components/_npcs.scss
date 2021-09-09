@@ -4,45 +4,45 @@
 .exclamation_mark {
   background-image: url("/gui/exclamation_mark.png");
   image-rendering: pixelated;
-  background-size: var(--grid-cell);
-  background-position: 4px 6px;
+  background-size: 40px;
+  background-position: 13px 30px;
   background-repeat: no-repeat;
 }
 
 // Settings common to all NPCS
-.npc-ed, .npc-neto, .npc-rafa, .npc-roberto, .npc-ana {
+.npc-ed, .npc-neto, .npc-rafa, .npc-roberto, .npc-ana, .npc-mari, .npc-nic {
   image-rendering: pixelated;
-  background-size: 100%;
-  width: 10px;
-  height: 10px;
+  background-size: 85px;
+  background-position-x: -10px;
+  background-position-y: -8px;
 }
 
 // Settings specific to one NPC
 
 .npc-rafa {
-  background-image: url("/sprites/npc_rafa.png");
+  background-image: url("/npcs/npc_rafa.png");
 }
 
 .npc-neto {
-  background-image: url("/sprites/npc_neto.png");
+  background-image: url("/npcs/npc_neto.png");
 }
 
 .npc-ed {
-  background-image: url("/sprites/npc_ed.png");
+  background-image: url("/npcs/npc_ed.png");
 }
 
 .npc-roberto {
-  background-image: url("/sprites/npc_roberto.png");
+  background-image: url("/npcs/npc_roberto.png");
 }
 
 .npc-ana {
-  background-image: url("/sprites/npc_ana.png");
+  background-image: url("/npcs/npc_ana.png");
 }
 
 .npc-mari {
-  background-image: url("/sprites/npc_mari.png");
+  background-image: url("/npcs/npc_mari.png");
 }
 
 .npc-nic {
-  background-image: url("/sprites/npc_nic.png");
+  background-image: url("/npcs/npc_nic.png");
 }
