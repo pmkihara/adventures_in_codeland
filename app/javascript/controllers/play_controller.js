@@ -104,7 +104,7 @@ export default class extends Controller {
     })
     .then(response => response.json())
     .then((data) => {
-      this.speechActiveTarget.innerText = data.message
+      this.speechActiveTarget.innerHTML = data.message
       this.formTarget.reset()
       if (data.correct) {
         this.boxDialoguePlayerTarget.classList.add("hidden");
