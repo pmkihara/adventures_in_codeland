@@ -60,6 +60,7 @@ export default class extends Controller {
       scoreInput.innerText = score;
       this.finalScoreTarget.classList.add('final-score');
       this.finalScoreTarget.classList.remove('hidden');
+      this.startGameTarget.classList.add('hidden');
     }
   }
 
@@ -75,8 +76,8 @@ export default class extends Controller {
   hideStartGame(event) {
     event.preventDefault();
 
-    this.finalScoreTarget.classList.remove('final-score');
-    this.finalScoreTarget.classList.add('hidden');
+    this.startGameTarget.classList.remove('final-score');
+    this.startGameTarget.classList.add('hidden');
   }
 
   // ---------- Request new info's for refresh play ----------

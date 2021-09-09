@@ -110,8 +110,8 @@ module GenerateCells
       play: play,
       npc: generate_npc_ana,
       cell_status: "active_quest",
-      position_x: 13,
-      position_y: 20,
+      position_x: 12,
+      position_y: 21,
       next_cell: rafa
     )
   end

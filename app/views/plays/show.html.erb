@@ -1,11 +1,12 @@
 <div class="play-container" data-controller="play">
   <div class="play-window-view">
-    <%= render 'start_game' %>
     <%= render 'game_menu' %>
     <div class="dialogue-layer"> <%# Sets a layer above the map for the dialogues %>
       <%= render 'dialogue' %>
     </div>
     <%= render'map' %>
   </div>
+  <%= render 'start_game' %>
   <%= render 'final_score' %>
 </div>
+<%= audio_tag "hello_world.mp3", id: "background_audio" %>
