@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #rotas pages
   get '/story', to: 'pages#story'
   get '/score', to: 'pages#score'
+  get '/credits', to: 'pages#credits'
 
   # rotas play
   get '/play', to: 'plays#new', as: 'new'

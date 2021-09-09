@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   def score
     @plays = Play.where("end_time IS NOT NULL").order("score DESC")
   end
+
+  def credits
+  end
 end
