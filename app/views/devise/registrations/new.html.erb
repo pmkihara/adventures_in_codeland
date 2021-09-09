@@ -2,8 +2,8 @@
   <div class="home-container">
     <%= link_to '✖', root_path, class: 'x-back-home' %>
     <div class="form-inputs fonts", style="width: 80%">
-      <div class="form-group d-flex form-head-buttons">
-        <%= link_to 'Log in', new_path, class: 'btn-pixel-45w' %>
+      <div class="form-group d-flex form-head-buttons mb-5">
+        <%= link_to 'Login', new_path, class: 'btn-pixel-45w' %>
         <%= link_to 'Sign up', "#", class: 'btn-pixel-45w btn-pixel-45w-disable' %>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -12,22 +12,30 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
+                      placeholder: 'email',
+                      label: false,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :name,
                       required: true,
+                      placeholder: 'name',
+                      label: false,
                       input_html: { autocomplete: "name" }%>
           <div class="form-inputs mb-3 form-two-inline">
             <%= f.input :password,
                         required: true,
+                        placeholder: 'password',
+                        label: false,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
                         required: true,
+                        placeholder: 'password confirmation',
+                        label: false,
                         input_html: { autocomplete: "new-password" } %>
           </div>
         </div>
         <div class="form-actions fonts">
-          <%= f.button :submit, "Sign up", class: 'btn-pixel-full-width mb-5' %>
+          <%= f.button :submit, "Sign up", class: 'btn-pixel-full-width' %>
         </div>
       <% end %>
       <%= render "devise/shared/links" %>
