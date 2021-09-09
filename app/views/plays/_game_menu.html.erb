@@ -6,7 +6,8 @@
     <%= audio_tag "test.mp3", id: "test" %>
     <div class="dropdown-menu dropdown-menu-right background-menu" >
       <%= link_to "Back", plays_path, class: "dropdown-item btn-menu mb-2" %>
-      <%= button_tag "Turn On Sound", class: "dropdown-item btn-menu mb-2", id: "toggle-sound" %>
+      <%= button_tag "Sound On", class: "dropdown-item btn-menu mb-2", id: "toggle-sound-on" %>
+      <%= button_tag "Sound Off", class: "dropdown-item btn-menu mb-2", id: "toggle-sound-off" %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item btn-menu" %>
     </div>
   </li>

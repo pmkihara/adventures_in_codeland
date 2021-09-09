@@ -34,9 +34,12 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   enter();
   const sound = document.getElementById("test")
-  document.getElementById("toggle-sound").addEventListener("click", (event) => {
+  document.getElementById("toggle-sound-on").addEventListener("click", (event) => {
     sound.volume = 0.2;
     sound.play();
+  })
+  document.getElementById("toggle-sound-off").addEventListener("click", (event) => {
+    sound.pause();
   })
 });
 document.addEventListener('keydown', moveCharacter);
