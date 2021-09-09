@@ -15,7 +15,11 @@
 .fonts-link {
   font-family: $pixel-title-font;
   text-transform: uppercase;
-  color:black
+  color:black;
+  &:hover {
+    color: $game-red;
+    text-decoration: none;
+  }
 }
 
 .form-head-buttons {
