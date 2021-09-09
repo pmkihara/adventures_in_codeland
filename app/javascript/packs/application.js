@@ -33,6 +33,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   enter();
+  const sound = document.getElementById("test")
+  document.getElementById("toggle-sound").addEventListener("click", (event) => {
+    sound.volume = 0.2;
+    sound.play();
+  })
 });
 document.addEventListener('keydown', moveCharacter);
 import "controllers"
