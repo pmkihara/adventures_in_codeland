@@ -1,0 +1,13 @@
+<div data-play-target="startGame">
+  <div class="final-score-container">
+    <div >
+      <%= link_to '✖', "#", class: 'x-back-home final-score-close' %>
+    </div>
+    <h2>Hello, <%= current_user.name if current_user.name %>!</h2>
+    <p>My name is Ruby, and I am lost in this curious land where everything works by writing code! I need to get back home, but I can not do it on my own.</p>
+    <p>Will you help me?</p>
+    <div class="btn-pixel-full-width" data-action = "click->play#hideStartGame">
+      <p>I will help you, Ruby!</p>
+    </div>
+  </div>
+</div>
