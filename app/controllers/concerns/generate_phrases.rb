@@ -19,9 +19,9 @@ module GeneratePhrases
   end
 
   def random_phrase_incorrect_and_tip(play)
-    phrases = ["Oh no! Incorrect answer! ",
-               "Try again, buddy! ",
-               "Wrong answer :( Perhaps this can help: "]
+    phrases = ["Oh no! Incorrect answer!<br>",
+               "Try again, buddy!<br>",
+               "Wrong answer :( <br>Perhaps this can help: "]
     tips = [play.cell_active.npc.tip1, play.cell_active.npc.tip2, play.cell_active.npc.tip3].compact
     "#{phrases.sample} #{tips.sample}"
   end

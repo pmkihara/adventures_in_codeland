@@ -15,9 +15,9 @@ module GenerateCells
   def generate_npc_ana
     npc_factory(
       name: "ana",
-      question: "Hello, Ruby! Did you say you need go back home? The only way to leave Codeland is through the Rake Portal, but it can not open while the inhabitants of of Codeland are in trouble. Are you ready to start? Type 'yes' (without the quotes) in the box at the bottom of the page!",
+      question: "Hello, Ruby! Did you say you need to go back home? The only way to leave Codeland is through the Rake Portal, but it can not open while the inhabitants of Codeland are in trouble. Are you ready to start? Type 'yes' (without the quotes) in the box at the bottom of the page!",
       resolution: 'yes',
-      tip1: "Type 'yes' (without the quotes) in the box at the bottom of the page!"
+      tip1: "<br>Type 'yes' (without the quotes) in the box at the bottom of the page!<br>"
     )
   end
 
@@ -26,9 +26,9 @@ module GenerateCells
       name: "rafa",
       question: 'The very first thing you learn in Codeland is how to print a string on your screen! A string is a set of characters that make a text, and it is surrounded by quote marks.<br>Try printing "Hello World".',
       resolution: 'puts "Hello World"',
-      tip1: "You can use 'puts' (without the quote marks) to print something on the screen.",
-      tip2: 'Do not forget to use double quote marks (") when you are typing your string!',
-      tip3: 'Remember to write "Hello World" with the "H" and "W" capitalized"!'
+      tip1: "<br>You can use 'puts' (without the quote marks) to print something on the screen.<br>",
+      tip2: '<br>Do not forget to use double quote marks (") when you are typing your string!<br>',
+      tip3: '<br>Remember to write "Hello World" with the "H" and "W" capitalized"!<br>'
     )
   end
 
@@ -37,9 +37,9 @@ module GenerateCells
       name: "neto",
       question: 'I have heard that you can store all kinds of data in variables. I keep forgetting my address, can you help me store it in a variable called address?<br>I live in "the nice garden in Codeland".',
       resolution: 'address = "the nice garden in Codeland"',
-      tip1: "To declare a variable, you need to type the name of the variable, followed by '=', and followed by the data you want to keep.",
-      tip2: "This is how you declare a variable: variable = value",
-      tip3: "Since you are storing a string, do not forget to use double quotes!"
+      tip1: "<br>To declare a variable, you need to type the name of the variable, followed by '=', and followed by the data you want to keep.<br>",
+      tip2: "<br>This is how you declare a variable: variable = value.<br>",
+      tip3: "<br>Since you are storing a string, do not forget to use double quotes!<br>"
     )
   end
 
@@ -48,8 +48,8 @@ module GenerateCells
       name: "ed",
       question: 'I have mixed my variables and I do not know their types anymore. There is a method called #class that will return the type of value.<br>ruby = "Ruby the Cat"<br>is_a_cat = true<br>number_of_paws = 4<br><br>I need to know which class is_a_cat is, can you help me?',
       resolution: "is_a_cat.class",
-      tip1: "You can call methods on variables by typing a dot (.) between the name of the variable and the method.",
-      tip2: "This is how you can call a method on a variable: variable.method",
+      tip1: "<br>You can call methods on variables by typing a dot (.) between the name of the variable and the method.<br>",
+      tip2: "<br>This is how you can call a method on a variable: variable.method.<br>"
     )
   end
 
@@ -58,19 +58,19 @@ module GenerateCells
       name: "mari",
       question: 'ruby = "RUBY THE CAT"<br>Oh no! Ruby is too big to pass through this door! They need to get smaller!',
       resolution: "is_a_cat.class",
-      tip1: "You can call methods on variables by typing a dot (.) between the name of the variable and the method.",
-      tip2: "This is how you can call a method on a variable: variable.method",
+      tip1: "<br>You can call methods on variables by typing a dot (.) between the name of the variable and the method.<br>",
+      tip2: "<br>This is how you can call a method on a variable: variable.method.<br>"
     )
   end
 
   def generate_npc_roberto
     npc_factory(
       name: "roberto",
-      question: "I need to print how many tickets I have solved for Batch #690 of Le Wagon! The only thing I know that it is 5 times the amount of teachers in this map. Can you help me?<br>It is also possible to perform math operations just like using a calculator:<br> sum (+), difference (-), product (*), quotient (/) ",
+      question: "I need to print how many tickets I have solved for Batch #690 of Le Wagon! The only thing I know that it is 5 times the amount of people in this map. Can you help me?<br>It is also possible to perform math operations just like using a calculator:<br> sum (+), difference (-), product (*), quotient (/) ",
       resolution: "puts 5 * 4",
-      tip1: "I think there are 4 teachers on the map ;)",
-      tip2: 'Do not forget to use "puts" to print the result!',
-      tip3: "You might want to use the asterisk('*') to do the operation."
+      tip1: "<br>I think there are 4 teachers on the map ;)<br>",
+      tip2: '<br>Do not forget to use "puts" to print the result!<br>',
+      tip3: "<br>You might want to use the asterisk('*') to do the operation.<br>"
     )
   end
 
