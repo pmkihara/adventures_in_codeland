@@ -2,7 +2,7 @@ const backgroundAudio = () => {
   const sound = document.getElementById("background_audio");
   const buttonSoundOn = document.getElementById("toggle-sound-on");
   const buttonSoundOff = document.getElementById("toggle-sound-off");
-  const buttonStart = document.getElementById("start-audio")
+  const buttonStart = document.getElementById("start-audio");
 
   const startAudio = (event) => {
     sound.volume = 0.2;

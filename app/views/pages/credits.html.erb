@@ -1,23 +1,22 @@
 <div class="home-banner pixel-art", style="background-image: url(<%= image_path('home_banner.png')%>)">
   <div class="home-container">
     <div class="home-title text-center">
-      <h1>Credits</h2>
+      <h1 id="loading">Credits</h2>
     </div>
     <%= link_to '✖', root_path, class: 'x-back-home' %>
     <div class="cards-container">
-
       <div class="card-info">
         <%= image_tag("paty-image.png") %>
         <h2>Patricia</h2>
         <ul class="list-inline">
           <li>
             <%= link_to "https://github.com/pmkihara", target: "_blank", class: "text-dark" do %>
-            <i class="fab fa-github"></i>
+              <i class="fab fa-github"></i>
             <% end %>
           </li>
           <li>
             <%= link_to "https://www.linkedin.com/in/patricia-kihara-5828a2213/", target: "_blank" do %>
-            <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin"></i>
             <% end %>
           </li>
         </ul>
@@ -28,12 +27,12 @@
         <ul class="list-inline">
           <li>
             <%= link_to "https://github.com/igordepolli", target: "_blank", class: "text-dark" do %>
-            <i class="fab fa-github"></i>
+              <i class="fab fa-github"></i>
             <% end %>
           </li>
           <li>
             <%= link_to "https://www.linkedin.com/in/igor-depolli-8712981a6/", target: "_blank" do %>
-            <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin"></i>
             <% end %>
           </li>
         </ul>
@@ -44,12 +43,12 @@
         <ul class="list-inline">
           <li>
             <%= link_to "https://github.com/thebgcs", target: "_blank", class: "text-dark" do %>
-            <i class="fab fa-github"></i>
+              <i class="fab fa-github"></i>
             <% end %>
           </li>
           <li>
             <%= link_to "https://www.linkedin.com/in/brsantiago/", target: "_blank" do %>
-            <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin"></i>
             <% end %>
           </li>
         </ul>
@@ -60,17 +59,23 @@
         <ul class="list-inline">
           <li>
             <%= link_to "https://github.com/Felipevbf", target: "_blank", class: "text-dark" do %>
-            <i class="fab fa-github"></i>
+              <i class="fab fa-github"></i>
             <% end %>
           </li>
           <li>
             <%= link_to "https://www.linkedin.com/in/felipe-von-brasche-figueiredo-99600939/", target: "_blank" do %>
-            <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin"></i>
             <% end %>
           </li>
         </ul>
       </div>
-
     </div>
   </div>
 </div>
+<%= audio_tag "final.mp3", id: "final-audio" %>
+<script>
+  window.addEventListener("mouseover", function(event) {
+    const audioFinal = document.getElementById("final-audio");
+    audioFinal.play();
+  });
+</script>

@@ -104,7 +104,8 @@ export default class extends Controller {
   // -------------------------- User Input Validation --------------------------
   validateAnswer(event) {
     event.preventDefault();
-
+    const sound_correct = document.getElementById("correct_audio");
+    const sound_wrong = document.getElementById("wrong_audio");
     fetch(this.formTarget.action, {
       method: 'POST',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
@@ -116,43 +117,14 @@ export default class extends Controller {
       this.formTarget.reset()
       if (data.correct) {
         this.boxDialoguePlayerTarget.classList.add("hidden");
+        sound_correct.play();
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
         }, 3000);
+      } else {
+        sound_wrong.play();
       }
     });
-  }
-
-  // validateName(event) {
-  //   event.preventDefault();
-
-  //   fetch(this.formTarget.action, {
-  //     method: 'POST',
-  //     headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-  //     body: new FormData(this.formTarget)
-  //   })
-  //   .then(response => response.json())
-  //   .then((data) => {
-  //     this.speechActiveTarget.innerText = data.message
-  //     this.formTarget.reset()
-  //   });
-  //   this.refreshBoxes();
-  // }
-
-  validateAge(event) {
-    event.preventDefault();
-
-    fetch(this.formTarget.action, {
-      method: 'POST',
-      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
-    })
-    .then(response => response.json())
-    .then((data) => {
-      this.speechActiveTarget.innerText = data.message
-      this.formTarget.reset()
-    });
-    this.refreshBoxes();
   }
 }
