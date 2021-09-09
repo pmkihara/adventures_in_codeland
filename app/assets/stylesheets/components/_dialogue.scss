@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   color: white;
-  line-height: 1.2em;
+  line-height: 1.8em;
 }
 
 .dialogue-npc-box {
@@ -49,6 +49,7 @@
   line-height: 1em;
   p {
     font-size: 20px;
+    font-family: $pixel-title-font
   }
 }
 
@@ -60,7 +61,7 @@
   color: white;
   font-family: $pixel-text-font;
   font-size: 30px;
-  line-height: 1.2em;
+  line-height: 1.8em;
   top: 20px;
 }
 
