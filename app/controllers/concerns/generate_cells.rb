@@ -12,10 +12,10 @@ module GenerateCells
     new_npc
   end
 
-  def generate_npc_welcome1
+  def generate_npc_ana
     npc_factory(
       name: "ana",
-      question: "Hello, Ruby and Adventurer! You said you need go back home? You will need to pass through the Rake Portal, but it can not open while the inhabitants of of Codeland are in trouble. Are you ready to start? Type 'yes' (without the quotes) in the box at the bottom of the page!",
+      question: "Hello, Ruby! Did you say you need go back home? The only way to leave Codeland is through the Rake Portal, but it can not open while the inhabitants of of Codeland are in trouble. Are you ready to start? Type 'yes' (without the quotes) in the box at the bottom of the page!",
       resolution: 'yes',
       tip1: "Type 'yes' (without the quotes) in the box at the bottom of the page!"
     )
@@ -27,7 +27,8 @@ module GenerateCells
       question: 'The very first thing you learn in Codeland is how to print a string on your screen! A string is a set of characters that make a text, and it is surrounded by quote marks.<br>Try printing "Hello World".',
       resolution: 'puts "Hello World"',
       tip1: "You can use 'puts' (without the quote marks) to print something on the screen.",
-      tip2: 'Do not forget to use double quote marks (") when you are typing your string!'
+      tip2: 'Do not forget to use double quote marks (") when you are typing your string!',
+      tip3: 'Remember to write "Hello World" with the "H" and "W" capitalized"!'
     )
   end
 
@@ -46,6 +47,16 @@ module GenerateCells
     npc_factory(
       name: "ed",
       question: 'I have mixed my variables and I do not know their types anymore. There is a method called #class that will return the type of value.<br>ruby = "Ruby the Cat"<br>is_a_cat = true<br>number_of_paws = 4<br><br>I need to know which class is_a_cat is, can you help me?',
+      resolution: "is_a_cat.class",
+      tip1: "You can call methods on variables by typing a dot (.) between the name of the variable and the method.",
+      tip2: "This is how you can call a method on a variable: variable.method",
+    )
+  end
+
+  def generate_npc_mari
+    npc_factory(
+      name: "mari",
+      question: 'ruby = "RUBY THE CAT"<br>Oh no! Ruby is too big to pass through this door! They need to get smaller!',
       resolution: "is_a_cat.class",
       tip1: "You can call methods on variables by typing a dot (.) between the name of the variable and the method.",
       tip2: "This is how you can call a method on a variable: variable.method",
@@ -97,10 +108,10 @@ module GenerateCells
     )
     SpecialCell.create(
       play: play,
-      npc: generate_npc_welcome1,
+      npc: generate_npc_ana,
       cell_status: "active_quest",
-      position_x: 11,
-      position_y: 19,
+      position_x: 12,
+      position_y: 21,
       next_cell: rafa
     )
   end

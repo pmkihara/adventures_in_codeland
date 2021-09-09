@@ -1,9 +1,37 @@
 body {
-  overflow: hidden;
+  overflow: hidden; // Keeps the page from scrolling down when moving the character
   background-color: #70C8A0;
 }
 
-// Div with the map crop - doesn't move
+// ---------------------------- Z-Index styles only ----------------------------
+// ---------------- Keep this section clear of other attributes ----------------
+
+.final-score {
+  z-index: 5;
+}
+
+.menu-group {
+  z-index: 4;
+}
+
+.dialogue-layer, .quest {
+  z-index: 3;
+}
+
+.answer-submit {
+  z-index: 2;
+}
+
+.map-overlay {
+  z-index: 1;
+}
+
+.map {
+  z-index: 0;
+}
+
+
+// ------------------------- Map Crop - Fixed position -------------------------
 .play-window-view {
   width: calc(17 * var(--grid-cell));
   height: calc(11 * var(--grid-cell));
@@ -12,7 +40,7 @@ body {
   border: 6px solid white;
 }
 
-// Div with the final score (should be
+// -------------------------------- Final Score --------------------------------
 
 .final-score {
   position: absolute;
@@ -65,50 +93,35 @@ body {
   right: 30px;
 }
 
-
-
-// Sets the position of the layers
-
-.final-score {
-  z-index: 5;
-}
-
-.menu-group {
-  z-index: 4;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  list-style-type: none;
+.start-game-container {
+  max-width: 900px;
+  margin: 20px;
+  text-align: center;
+  h2 {
+    font-family: 'Slackey';
+    font-size: 90px;
+    text-align: center;
+    color: rgba($color: rgb(255, 196, 0), $alpha: 0.8);
+    line-height: 1.2em;
+    text-shadow: 0 6px 0 #1e0606;
+  }
+  p {
+    color: white;
+    font-size: 32px;
+    margin: 0;
+    font-family: $pixel-title-font;
+  }
+  .btn-pixel-full-width {
+    margin-top: 20px;
+  }
   a:hover {
     text-decoration: none;
   }
-  span {
-    vertical-align: middle;
-    margin: 0;
+  .score-number {
+  margin-bottom: 0;
+  color: rgb(255, 196, 0);
+  background-color: black;
+  padding: 10px;
+  font-family: $pixel-title-font;
   }
-}
-
-.background-menu {
-  background-color: transparent;
-}
-
-.dialogue-layer {
-  z-index: 3;
-}
-
-.quest {
-  z-index:3;
-}
-
-.answer-submit {
-  z-index: 2;
-}
-
-.map-overlay {
-  z-index: 1;
-}
-
-.map {
-  z-index: 0;
 }

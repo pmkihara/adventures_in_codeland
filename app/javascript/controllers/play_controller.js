@@ -3,7 +3,7 @@ import { csrfToken } from "@rails/ujs";
 
 
 export default class extends Controller {
-  static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer', 'finalScore'];
+  static targets = ['speechActive', 'speechInactive', 'form', 'boxDialogueNpc', 'boxDialoguePlayer', 'finalScore', 'startGame'];
 
   // ---------- Sets the dialogues depending on the status of the NPC ----------
   refreshBoxes(specialCells) {
@@ -60,6 +60,7 @@ export default class extends Controller {
       scoreInput.innerText = score;
       this.finalScoreTarget.classList.add('final-score');
       this.finalScoreTarget.classList.remove('hidden');
+      this.startGameTarget.classList.add('hidden');
     }
   }
 
@@ -71,6 +72,13 @@ export default class extends Controller {
     this.finalScoreTarget.classList.add('hidden');
   }
 
+  // ---------- Hides the start game box when the button is clicked ----------
+  hideStartGame(event) {
+    event.preventDefault();
+
+    this.startGameTarget.classList.remove('final-score');
+    this.startGameTarget.classList.add('hidden');
+  }
 
   // ---------- Request new info's for refresh play ----------
   updateInfos() {

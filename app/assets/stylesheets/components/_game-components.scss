@@ -24,15 +24,34 @@
                 0 -3px 0 black,
                 inset 0 3px 0 rgba(0, 0, 0, 0.2),
                 inset 3px 0 0 rgba(0, 0, 0, 0.2);
-    transform: translate(0px, 4px);
   }
   a:hover {
     text-decoration: none;
     color: white;
   }
 }
+
 .btn-menu-down {
   padding: 4px 10px 4px;
   font-size: 30px;
   line-height: 0;
+}
+
+.menu-group {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  list-style-type: none;
+  a:hover {
+    text-decoration: none;
+  }
+  span {
+    vertical-align: middle;
+    margin: 0;
+  }
+}
+
+.background-menu {
+  background-color: transparent;
 }
