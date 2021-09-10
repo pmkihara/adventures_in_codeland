@@ -1,5 +1,6 @@
+# config/meta.yml
+
 meta_product_name: "Ruby's Adventures in Codeland"
 meta_title: "Ruby's Adventures in Codeland - Learn basic Ruby language while having fun"
 meta_description: "Ruby the Cat got lost in Codeland, where everything works by writing code. Help Ruby help the people from Codeland by writing Ruby code."
 meta_image: "cover.png" # should exist in `app/assets/images/`
-
