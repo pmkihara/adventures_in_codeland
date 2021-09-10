@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, skip: :registrations
+  as :user do
+    get 'users/new', to: 'devise/registrations#new', as: :new_user_registration
+    post 'users', to: 'devise/registrations#create', as: :user_registration
+  end
   root to: 'pages#home'
 
   #rotas pages
