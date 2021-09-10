@@ -29,6 +29,7 @@ import "bootstrap";
 import { moveCharacter } from '../components/moveCharacter';
 import { enter } from '../components/enter';
 import { backgroundAudio } from '../components/audio';
+import { initSweetalert } from './init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,6 +39,34 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById("background_audio")) {
     backgroundAudio();
   }
+
+  initSweetalert('#confirmation-alert-new-game', {
+    title: "Are you sure?",
+    text: "Once confirm, your previous Adventure will be reset!",
+    icon: "warning",
+    dangerMode: true,
+    buttons: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#new-link-game');
+      link.click();
+    }
+  });
+
+  initSweetalert('#confirmation-alert-log-out', {
+    title: "Are you sure?",
+    text: "You can login after, don't worry. Ruby will be waiting!",
+    icon: "warning",
+    dangerMode: true,
+    buttons: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#log-out-link');
+      link.click();
+    }
+  });
+
 });
+
 document.addEventListener('keydown', moveCharacter);
 import "controllers"
