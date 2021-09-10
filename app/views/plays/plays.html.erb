@@ -10,7 +10,7 @@
       <button id="confirmation-alert-new-game" class="mb-4 btn-pixel-full-width">New Adventure</button>
       <%= link_to "", new_path, id: "new-link-game", class: "hidden" %>
       <button id="confirmation-alert-log-out" class="mb-4 btn-pixel-full-width">Logout</button>
-      <%= link_to "", destroy_user_session_path, id: "log-out-link", class: "hidden" %>
+      <%= link_to "", destroy_user_session_path, method: :delete, id: "log-out-link", class: "hidden" %>
     </div>
     <%= link_to '✖', root_path, class: 'x-back-home' %>
   </div>
