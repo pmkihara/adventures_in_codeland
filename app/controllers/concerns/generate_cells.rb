@@ -24,7 +24,7 @@ module GenerateCells
   def generate_npc_rafa
     npc_factory(
       name: "rafa",
-      question: 'The very first thing you learn in Codeland is how to print a string on your screen! A string is a set of characters that make a text, and it is surrounded by quote marks.<br>Try printing "Hello World".',
+      question: 'The very first thing you learn in Codeland is how to print a string on your screen! A string is a text, and it is surrounded by quote marks.<br>Now try printing "Hello World".',
       resolution: 'puts "Hello World"',
       tip1: "<br>You can use 'puts' (without the quote marks) to print something on the screen.<br>",
       tip2: '<br>Do not forget to use double quote marks (") when you are typing your string!<br>',
@@ -56,10 +56,11 @@ module GenerateCells
   def generate_npc_mari
     npc_factory(
       name: "mari",
-      question: 'ruby = "RUBY THE CAT"<br><br>Oh no! Ruby is too big to pass through this door! You can use the method #downcase on the [ruby] variable to make it smaller (it should become like this: "ruby the cat").',
-      resolution: "ruby.downcase",
+      question: 'ruby = "RUBY THE CAT"<br><br>Oh no! Ruby is too big to pass through this door! You can use the method #downcase! on the [ruby] variable to make it smaller (it should become like this: "ruby the cat").',
+      resolution: "ruby.downcase!",
       tip1: "<br>You can call methods on variables by typing a dot (.) between the name of the variable and the method.<br>",
-      tip2: "<br>This is how you can call a method on a variable: variable.method.<br>"
+      tip2: "<br>This is how you can call a method on a variable: variable.method.<br>",
+      tip3: "<br>Do not forget the exclamation mark (!) after the method! Otherwise Ruby will not stay small for long!"
     )
   end
 
