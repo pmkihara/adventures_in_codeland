@@ -50,16 +50,6 @@ class PlaysController < ApplicationController
     end
   end
 
-  def validate_name
-    skip_authorization
-    current_user.name = params[:answer]
-  end
-
-  def validate_age
-    skip_authorization
-    current_user.age = params[:answer]
-  end
-
   # API to request infos about the play
   def update_infos
     skip_authorization
