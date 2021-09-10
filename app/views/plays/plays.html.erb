@@ -6,9 +6,12 @@
     <div class="home-button-container">
       <% if @play %>
         <%= link_to 'Continue Adventure', show_path(@play), class: "mb-4 btn-pixel-full-width" %>
+        <button id="confirmation-alert-new-game" class="mb-4 btn-pixel-full-width">New Adventure</button>
+        <%= link_to "", new_path, id: "new-link-game", class: "hidden" %>
       <% end %>
-      <button id="confirmation-alert-new-game" class="mb-4 btn-pixel-full-width">New Adventure</button>
-      <%= link_to "", new_path, id: "new-link-game", class: "hidden" %>
+      <% if current_user.plays.empty? %>
+        <%= link_to "New Adventure", new_path, class: "mb-4 btn-pixel-full-width" %>
+      <% end %>
       <button id="confirmation-alert-log-out" class="mb-4 btn-pixel-full-width">Logout</button>
       <%= link_to "", destroy_user_session_path, id: "log-out-link", class: "hidden" %>
     </div>
