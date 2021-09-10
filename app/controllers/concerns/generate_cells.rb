@@ -46,7 +46,7 @@ module GenerateCells
   def generate_npc_ed
     npc_factory(
       name: "ed",
-      question: 'I have mixed my variables and I do not know their types anymore. There is a method called #class that will return the type of value.<br>ruby = "Ruby the Cat"<br>is_a_cat = true<br>number_of_paws = 4<br><br>I need to know which class is_a_cat is, can you help me?',
+      question: 'I have mixed my variables and I do not know their types anymore. There is a method called #class that will return the type of the data.<br>ruby = "Ruby the Cat"<br>is_a_cat = true<br>number_of_paws = 4<br><br>I need to know which class is_a_cat is, can you help me?',
       resolution: "is_a_cat.class",
       tip1: "<br>You can call methods on variables by typing a dot (.) between the name of the variable and the method.<br>",
       tip2: "<br>This is how you can call a method on a variable: variable.method.<br>"
