@@ -106,6 +106,10 @@ export default class extends Controller {
     event.preventDefault();
     const sound_correct = document.getElementById("correct_audio");
     const sound_wrong = document.getElementById("wrong_audio");
+    const audioCorrect = (event) => {
+      sound_correct.volume = 0.2;
+      sound_correct.play();
+    }
     fetch(this.formTarget.action, {
       method: 'POST',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
@@ -117,7 +121,7 @@ export default class extends Controller {
       this.formTarget.reset()
       if (data.correct) {
         this.boxDialoguePlayerTarget.classList.add("hidden");
-        sound_correct.play();
+        audioCorrect();
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
