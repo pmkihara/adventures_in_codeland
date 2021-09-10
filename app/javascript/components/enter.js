@@ -1,4 +1,5 @@
 const enter = () => {
+
   function submitOnEnter(event){
     if(event.which === 13){
         event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
