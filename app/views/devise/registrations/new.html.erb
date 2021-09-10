@@ -6,38 +6,46 @@
         <%= link_to 'Login', new_path, class: 'btn-pixel-45w' %>
         <%= link_to 'Sign up', "#", class: 'btn-pixel-45w btn-pixel-45w-disable' %>
       </div>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+      <%= form_with(model: resource, url: user_registration_path(resource), format: :html, local: true, html: {class: 'simple_form new_user'}) do |f| %>
         <div class="form-inputs fonts">
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      placeholder: 'email',
-                      label: false,
-                      input_html: { autocomplete: "email" }%>
-          <%= f.input :name,
-                      required: true,
-                      placeholder: 'name',
-                      label: false,
-                      input_html: { autocomplete: "name" }%>
+          <div class="form-group email required user_email">
+            <%= f.text_field :email,
+                        required: true,
+                        autofocus: true,
+                        placeholder: 'email',
+                        label: false,
+                        class: 'form-control' %>
+          </div>
+          <div class="form-group email required user_email">
+            <%= f.text_field :name,
+                        required: true,
+                        placeholder: 'name',
+                        label: false,
+                        class: 'form-control' %>
+          </div>
+
           <div class="form-inputs mb-3 form-two-inline">
-            <%= f.input :password,
-                        required: true,
-                        placeholder: 'password',
-                        label: false,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        placeholder: 'password confirmation',
-                        label: false,
-                        input_html: { autocomplete: "new-password" } %>
+            <div class="form-group password required user_password">
+                      <%= f.text_field :password,
+                          required: true,
+                          placeholder: 'password',
+                          label: false,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          class: 'form-control password required' %>
+            </div>
+            <div class="form-group password required user_password_confirmation">
+                      <%= f.text_field :password_confirmation,
+                          required: true,
+                          placeholder: 'password confirmation',
+                          label: false,
+                          class: 'form-control password required' %>
+            </div>
           </div>
         </div>
         <div class="form-actions fonts">
-          <%= f.button :submit, "Sign up", class: 'btn-pixel-full-width' %>
+          <%= f.submit "Sign up", class: 'btn-pixel-full-width', style: "border: none;" %>
         </div>
-      <% end %>
+      <% end %>,
       <%= render "devise/shared/links" %>
     </div>
   </div>
