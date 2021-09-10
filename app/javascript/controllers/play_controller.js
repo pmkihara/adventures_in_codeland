@@ -106,7 +106,7 @@ export default class extends Controller {
     event.preventDefault();
     const sound_correct = document.getElementById("correct_audio");
     const sound_wrong = document.getElementById("wrong_audio");
-    const startAudio = (event) => {
+    const audioCorrect = (event) => {
       sound_correct.volume = 0.2;
       sound_correct.play();
     }
@@ -121,7 +121,7 @@ export default class extends Controller {
       this.formTarget.reset()
       if (data.correct) {
         this.boxDialoguePlayerTarget.classList.add("hidden");
-        startAudio();
+        audioCorrect();
         setTimeout(() => {
           this.boxDialogueNpcTarget.classList.add("hidden");
           this.updateInfos();
