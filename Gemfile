@@ -4,15 +4,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '~> 1.1'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,12 +34,12 @@ gem 'xpath'
 gem 'roberto_barros', github: "davisjr2000/roberto-barros"
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 
 gem 'autoprefixer-rails', '10.2.5'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.15'
 gem 'simple_form'
 group :development, :test do
   gem 'pry-byebug'
@@ -52,8 +52,8 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.2'
+  gem 'web-console', '>= 4.1.0'
+  gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
